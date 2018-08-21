@@ -238,6 +238,9 @@
             <a href="#reviewchain-survey-api" class="toc-h1 toc-link" data-title="ReviewChain Survey API">ReviewChain Survey API</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#create-airdrop-survey" class="toc-h2 toc-link" data-title="Create Airdrop Survey">Create Airdrop Survey</a>
+                  </li>
+                  <li>
                     <a href="#create-survey" class="toc-h2 toc-link" data-title="Create Survey">Create Survey</a>
                   </li>
                   <li>
@@ -245,6 +248,18 @@
                   </li>
                   <li>
                     <a href="#reward-survey-participants" class="toc-h2 toc-link" data-title="Reward Survey Participants">Reward Survey Participants</a>
+                  </li>
+                  <li>
+                    <a href="#complete-survey-airdrop" class="toc-h2 toc-link" data-title="Complete Survey Airdrop">Complete Survey Airdrop</a>
+                  </li>
+                  <li>
+                    <a href="#complete-rvc-airdrop" class="toc-h2 toc-link" data-title="Complete RVC Airdrop">Complete RVC Airdrop</a>
+                  </li>
+                  <li>
+                    <a href="#reward-additional-tokens-to-survey-owner" class="toc-h2 toc-link" data-title="Reward Additional Tokens to Survey Owner">Reward Additional Tokens to Survey Owner</a>
+                  </li>
+                  <li>
+                    <a href="#refund-airdrop-backup-rvc-tokens-to-survey-owner" class="toc-h2 toc-link" data-title="Refund Airdrop Backup RVC Tokens to Survey Owner">Refund Airdrop Backup RVC Tokens to Survey Owner</a>
                   </li>
                   <li>
                     <a href="#see-if-you-msg-sender-are-a-survey-participant" class="toc-h2 toc-link" data-title="See if you (msg.sender) are a Survey Participant">See if you (msg.sender) are a Survey Participant</a>
@@ -282,19 +297,40 @@
             <a href="#reviewchain-coupon-api" class="toc-h1 toc-link" data-title="ReviewChain Coupon API">ReviewChain Coupon API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#create-coupon" class="toc-h2 toc-link" data-title="Create Coupon">Create Coupon</a>
+                    <a href="#create-sku" class="toc-h2 toc-link" data-title="Create SKU">Create SKU</a>
                   </li>
                   <li>
-                    <a href="#add-quantity-to-coupon-sku" class="toc-h2 toc-link" data-title="Add Quantity to Coupon SKU">Add Quantity to Coupon SKU</a>
+                    <a href="#create-coupon-coupontype" class="toc-h2 toc-link" data-title="Create Coupon (CouponType)">Create Coupon (CouponType)</a>
+                  </li>
+                  <li>
+                    <a href="#create-tokencoupon-coupontype" class="toc-h2 toc-link" data-title="Create TokenCoupon (CouponType)">Create TokenCoupon (CouponType)</a>
+                  </li>
+                  <li>
+                    <a href="#create-fundcoupon-coupontype" class="toc-h2 toc-link" data-title="Create FundCoupon (CouponType)">Create FundCoupon (CouponType)</a>
+                  </li>
+                  <li>
+                    <a href="#add-quantity-to-coupon-sku-that-is-populated" class="toc-h2 toc-link" data-title="Add Quantity to Coupon SKU that is Populated">Add Quantity to Coupon SKU that is Populated</a>
+                  </li>
+                  <li>
+                    <a href="#create-the-initial-example-for-the-coupon-under-an-empty-sku" class="toc-h2 toc-link" data-title="Create the Initial Example for the Coupon under an Empty SKU">Create the Initial Example for the Coupon under an Empty SKU</a>
+                  </li>
+                  <li>
+                    <a href="#refund-rvc-tokens-in-an-escrow-fund" class="toc-h2 toc-link" data-title="Refund RVC Tokens in an Escrow Fund">Refund RVC Tokens in an Escrow Fund</a>
+                  </li>
+                  <li>
+                    <a href="#execute-fundcoupon-airdrop-separate-from-airdrops-related-to-surveys" class="toc-h2 toc-link" data-title="Execute FundCoupon Airdrop (Separate from Airdrops related to Surveys)">Execute FundCoupon Airdrop (Separate from Airdrops related to Surveys)</a>
+                  </li>
+                  <li>
+                    <a href="#execute-rvc-airdrop-separate-from-airdrops-related-to-surveys" class="toc-h2 toc-link" data-title="Execute RVC Airdrop (Separate from Airdrops related to Surveys)">Execute RVC Airdrop (Separate from Airdrops related to Surveys)</a>
+                  </li>
+                  <li>
+                    <a href="#redeem-a-coupon" class="toc-h2 toc-link" data-title="Redeem a Coupon">Redeem a Coupon</a>
                   </li>
                   <li>
                     <a href="#transfer-a-coupon" class="toc-h2 toc-link" data-title="Transfer a Coupon">Transfer a Coupon</a>
                   </li>
                   <li>
                     <a href="#transfer-a-coupon-sku" class="toc-h2 toc-link" data-title="Transfer a Coupon SKU">Transfer a Coupon SKU</a>
-                  </li>
-                  <li>
-                    <a href="#redeem-a-coupon" class="toc-h2 toc-link" data-title="Redeem a Coupon">Redeem a Coupon</a>
                   </li>
                   <li>
                     <a href="#get-the-number-of-total-coupons-in-circulation" class="toc-h2 toc-link" data-title="Get the Number of Total Coupons in Circulation">Get the Number of Total Coupons in Circulation</a>
@@ -306,7 +342,10 @@
                     <a href="#get-all-coupon-data-for-a-given-coupon" class="toc-h2 toc-link" data-title="Get All Coupon Data for a Given Coupon">Get All Coupon Data for a Given Coupon</a>
                   </li>
                   <li>
-                    <a href="#get-coupon-data-for-a-given-coupon" class="toc-h2 toc-link" data-title="Get Coupon Data for a Given Coupon">Get Coupon Data for a Given Coupon</a>
+                    <a href="#get-coupon-data-details-for-a-given-coupon" class="toc-h2 toc-link" data-title="Get Coupon Data/Details for a Given Coupon">Get Coupon Data/Details for a Given Coupon</a>
+                  </li>
+                  <li>
+                    <a href="#get-coupon-reward-data-details-for-a-given-coupon" class="toc-h2 toc-link" data-title="Get Coupon Reward Data/Details for a Given Coupon">Get Coupon Reward Data/Details for a Given Coupon</a>
                   </li>
                   <li>
                     <a href="#get-coupon-owner" class="toc-h2 toc-link" data-title="Get Coupon Owner">Get Coupon Owner</a>
@@ -377,22 +416,97 @@ Check server connection</p>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">defaultAccount</span> <span class="o">=</span> <span class="nx">account</span><span class="p">;</span>
 </code></pre>
 <p>Set Web3 account for use</p>
-<h2 id='add-type-and-status-for-coupons-and-surveys'>Add type and status for coupons and surveys</h2><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">RewardType</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"IndividualPayment"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MonetaryRaffle"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"MonetaryBounty"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Coupon"</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<h2 id='add-type-and-status-for-coupons-and-surveys'>Add type and status for coupons and surveys</h2><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">RewardType</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"IndividualPayment"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"TokenRaffle"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"TokenBounty"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Coupon"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"AirdropCoupon"</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
 <span class="kd">var</span> <span class="nx">SurveyStatus</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Active"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Inactive"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Rewarded"</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="kd">var</span> <span class="nx">SurveyRewardTokenType</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"NONE"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"ETH"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"RVC"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"ERC20"</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
 <span class="kd">var</span> <span class="nx">CouponType</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"TokenCoupon"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Coupon"</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 <span class="kd">var</span> <span class="nx">CouponStatus</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Valid"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"Redeemed"</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="kd">var</span> <span class="nx">CouponRewardTokenType</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"NONE"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"ETH"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"RVC"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"ERC20"</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 </code></pre>
-<p>The ReviewChain survey and coupon contracts contain enums for RewardType, SurveyStatus, CouponType, &amp; CouponStatus.
+<p>The ReviewChain survey and coupon contracts contain enums for RewardType, SurveyStatus, SurveyRewardTokenType, CouponType, CouponStatus, &amp; CouponRewardTokenType.
 Add these values for equivalent coupon and survey enum types.</p>
 <h1 id='reviewchain-survey-api'>ReviewChain Survey API</h1>
 <p>A simple interface to access the ReviewChain Surveys Contract for Survey incentivization.</p>
-<h2 id='create-survey'>Create Survey</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createSurvey</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">)</span>
+<h2 id='create-airdrop-survey'>Create Airdrop Survey</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createAirdropSurvey</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">couponSKU</span><span class="p">,</span> <span class="nx">couponCreator</span><span class="p">,</span> <span class="nx">couponDesc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">couponValue</span><span class="p">,</span> <span class="nx">valueRVC</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"My CouponReward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
+<span class="nx">createAirdropSurvey</span><span class="p">(</span><span class="s2">"My ICO Airdrop Survey"</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="s2">"SKU-For-Airdrop-Survey"</span><span class="p">,</span> <span class="s2">"My Business"</span><span class="p">,</span> <span class="s2">"Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img12.jpg"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">);</span>
 </code></pre>
-<p>Create a new survey using the ReviewChain survey contract.</p>
+<p>Create a new airdrop survey (survey RewardType of AirdropCoupon) using the ReviewChain survey contract.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>name of the survey</td>
+</tr>
+<tr>
+<td>status</td>
+<td>SurveyStatus</td>
+<td>true</td>
+<td>Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded</td>
+</tr>
+<tr>
+<td>dataSupplier</td>
+<td>string</td>
+<td>true</td>
+<td>Eth Address of a data supplier to adjust survey besides the owner</td>
+</tr>
+<tr>
+<td>couponSKU</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU for the all FundCoupons that will be created and distributed in the survey airdrop</td>
+</tr>
+<tr>
+<td>couponCreator</td>
+<td>string</td>
+<td>true</td>
+<td>The name of the creator, or business name, for the coupons</td>
+</tr>
+<tr>
+<td>couponDesc</td>
+<td>string</td>
+<td>true</td>
+<td>The description for each coupon</td>
+</tr>
+<tr>
+<td>couponImage</td>
+<td>string</td>
+<td>true</td>
+<td>The image representing each coupon</td>
+</tr>
+<tr>
+<td>couponValue</td>
+<td>number</td>
+<td>true</td>
+<td>The value is the amount/number of tokens that will be rewarded/sent to the FundCoupon holder upon the airdrop</td>
+</tr>
+<tr>
+<td>RVC_tokens</td>
+<td>ERC20</td>
+<td>false</td>
+<td>ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.</td>
+</tr>
+</tbody></table>
+<h2 id='create-survey'>Create Survey</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createSurvey</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">maxParticipants</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Coupon Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">NONE</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre>
+<p>Create a new survey (any RewardType besides AirdropCoupon) using the ReviewChain survey contract.</p>
 
 <table><thead>
 <tr>
@@ -418,25 +532,43 @@ Add these values for equivalent coupon and survey enum types.</p>
 <td>reward</td>
 <td>RewardType</td>
 <td>true</td>
-<td>type of reward that the surevey pays out to participants</td>
+<td>type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]</td>
+</tr>
+<tr>
+<td>rewardToken</td>
+<td>SurveyRewardTokenType</td>
+<td>false</td>
+<td>Not required for Coupon RewardType. This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]</td>
+</tr>
+<tr>
+<td>tokens</td>
+<td>ERC20</td>
+<td>false</td>
+<td>ERC20 type for custom payment tokens. Only required if creator would like to implement custom ERC20 token.</td>
 </tr>
 <tr>
 <td>rewardCouponId</td>
 <td>number</td>
 <td>false</td>
-<td>Only required for Coupon RewardTypes. This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.</td>
+<td>Only required for Coupon RewardType. This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.</td>
 </tr>
 <tr>
 <td>status</td>
 <td>SurveyStatus</td>
 <td>true</td>
-<td>Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded</td>
+<td>Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.</td>
 </tr>
 <tr>
 <td>dataSupplier</td>
 <td>String</td>
 <td>true</td>
 <td>Eth Address of a data supplier to adjust survey besides the owner</td>
+</tr>
+<tr>
+<td>maxParticipants</td>
+<td>number</td>
+<td>false</td>
+<td>Only required for IndividualPayment RewardType. This value is used to calculate how many participants to pay and how much to give to each.</td>
 </tr>
 </tbody></table>
 <h2 id='create-survey-submission'>Create Survey Submission</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">newSubmission</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">,</span> <span class="nx">address</span><span class="p">)</span>
@@ -446,7 +578,9 @@ Add these values for equivalent coupon and survey enum types.</p>
 <span class="nx">newSubmission</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
 </code></pre>
 <p>Create a new submission for a survey with a specific id using the ReviewChain survey contract.
-Function sender must be survey owner or data supplier for the survey.</p>
+Function sender must be survey owner or data supplier for the survey.
+If the survey RewardType is IndividualPayment, the participant is automatically rewarded a portion of the tokens set aside for reward as long as they are one of the first, up to maxParticipants set on creation.
+If the survey RewardType is AirdropCoupon, a Coupon of type FundCoupon is automatically created under the specific sku of the coupons set for the survey on creation. The coupon is automatically transferred to the participant.</p>
 
 <table><thead>
 <tr>
@@ -472,11 +606,13 @@ Function sender must be survey owner or data supplier for the survey.</p>
 <h2 id='reward-survey-participants'>Reward Survey Participants</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">rewardParticipants</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">surveyId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mf">0.004</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>    <span class="c1">// Ex. FOR RAFFLE or COUPON</span>
-<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Ex. FOR BOUNTY or INDIVIDUAL PAYMENT</span>
+<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mf">0.004</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c1">// Ex. FOR RAFFLE or COUPON</span>
+<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>       <span class="c1">// Ex. FOR BOUNTY</span>
 </code></pre>
-<p>Using the set reward type for the survey and the given payout amount, reward either a participant, some participants, or all participants.
-Function sender must be survey owner or data supplier for the survey.</p>
+<p>Using the set RewardType for the survey and the given payout amount, reward either a participant, some participants, or all participants.
+Function sender must be survey owner or data supplier for the survey.
+Survey must not already be rewarded.
+This Function cannot be called with surveys of RewardType IndividualPayment or surveys of RewardType AirdropCoupon because: IndividualPayment is ongoing during submissions only, AirdropCoupon distributes ERC20 type tokens to all FundCoupon holders for the survey airdrop.</p>
 
 <table><thead>
 <tr>
@@ -490,13 +626,122 @@ Function sender must be survey owner or data supplier for the survey.</p>
 <td>etherAmount</td>
 <td>number</td>
 <td>false</td>
-<td>Amount of Ether to send to the functn call. Only required if the reward type is a coupon or raffle, because the amount will be used to cover oraclize callback costs</td>
+<td>Amount of Ether to send to the functn call. Only required if the RewardType is a Coupon or TokenRaffle, because the amount will be used to cover oraclize callback costs.</td>
 </tr>
 <tr>
 <td>surveyId</td>
 <td>number</td>
 <td>true</td>
 <td>ID of survey to reward</td>
+</tr>
+</tbody></table>
+<h2 id='complete-survey-airdrop'>Complete Survey Airdrop</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">completeSurveyAirdrop</span><span class="p">(</span><span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">completeSurveyAirdrop</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
+</code></pre>
+<p>If the RewardType is AirdropCoupon, fund all the FundCoupon vouchers under the sku of the specific survey with the respective tokens that were declared on creation.
+Ensure caller sends an amount of their tokens equal to the value declared per voucher/FundCoupons on creation multiplied by the number of vouchers/FundCoupons distributed (value * numFundCoupons).
+This action will refund any locked RVC backup tokens back to the survey owner.
+Function caller must be survey owner or data supplier for the survey.
+Survey must not already be rewarded.
+This Function can only be called with surveys of RewardType AirdropCoupon.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>surveyId</td>
+<td>number</td>
+<td>true</td>
+<td>ID of survey</td>
+</tr>
+<tr>
+<td>tokens</td>
+<td>ERC20</td>
+<td>true</td>
+<td>ERC20 tokens to distribute to respective FundCoupon owners.</td>
+</tr>
+</tbody></table>
+<h2 id='complete-rvc-airdrop'>Complete RVC Airdrop</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">completeRVCAirdrop</span><span class="p">(</span><span class="nx">_surveyId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">completeRVCAirdrop</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+</code></pre>
+<p>Distribute the locked up RVC tokens to survey participants. This is the backup distribution if say the ICO fails.
+Function caller must be survey owner or data supplier for the survey.
+Survey must not already be rewarded.
+Survey must have at least 1 participant.
+This Function can only be called with surveys of RewardType AirdropCoupon.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>surveyId</td>
+<td>number</td>
+<td>true</td>
+<td>ID of survey</td>
+</tr>
+</tbody></table>
+<h2 id='reward-additional-tokens-to-survey-owner'>Reward Additional Tokens to Survey Owner</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">refundAdditionalTokens</span><span class="p">(</span><span class="nx">_surveyId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">refundAdditionalTokens</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+</code></pre>
+<p>If a survey of RewardType IndividualPayment does not reach its maxParticipants set on creation, this Function enables the survey owner to retrieve the left over custom ERC20 tokens that were funded and not rewarded.
+SurveyRewardTokenType must be ERC20.
+Function sender must be data supplier for the survey, survey contract, or contract owner (not survey owner).
+Survey must not already be rewarded.
+This Function can only be called with surveys of RewardType IndividualPayment.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>surveyId</td>
+<td>number</td>
+<td>true</td>
+<td>ID of survey</td>
+</tr>
+</tbody></table>
+<h2 id='refund-airdrop-backup-rvc-tokens-to-survey-owner'>Refund Airdrop Backup RVC Tokens to Survey Owner</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">refundAirdropRVC</span><span class="p">(</span><span class="nx">_surveyId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">refundAirdropRVC</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+</code></pre>
+<p>If a survey of RewardType AirdropCoupon needs to release the failsafe/backup RVC tokens, this Function returns those tokens to the survey owner.
+Function sender must be data supplier for the survey, survey contract, or contract owner (not survey owner).
+This Function can only be called with surveys of RewardType AirdropCoupon.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>surveyId</td>
+<td>number</td>
+<td>true</td>
+<td>ID of survey</td>
 </tr>
 </tbody></table>
 <h2 id='see-if-you-msg-sender-are-a-survey-participant'>See if you (msg.sender) are a Survey Participant</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">isParticipant</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
@@ -753,13 +998,15 @@ Function sender must be survey owner or data supplier for the survey.</p>
 </tbody></table>
 <h1 id='reviewchain-coupon-api'>ReviewChain Coupon API</h1>
 <p>A simple interface to access the ReviewChain Coupons Contract for Coupon creation and interaction.</p>
-<h2 id='create-coupon'>Create Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createCoupon</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">sku</span><span class="p">,</span> <span class="nx">cType</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">)</span>
+<h2 id='create-sku'>Create SKU</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createSKU</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">cType</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">lockupRelease</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">createCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-COUPON"</span><span class="p">,</span> <span class="nx">CouponType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="s2">"My Business"</span><span class="p">,</span> <span class="s2">"1 Free meal"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img12.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="nx">createCoupon</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponType</span><span class="p">.</span><span class="nx">TokenCoupon</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, 0.01 ETH"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">createSKU</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">NONE</span><span class="p">,</span> <span class="s2">"My Business"</span><span class="p">,</span> <span class="s2">"1 Free meal"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img12.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">);</span>
+<span class="nx">createSKU</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponType</span><span class="p">.</span><span class="nx">TokenCoupon</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ERC20</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="nx">lockupRelease</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">);</span>
+<span class="nx">createSKU</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponType</span><span class="p">.</span><span class="nx">FundCoupon</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">NONE</span><span class="p">,</span> <span class="s2">"My ICO"</span><span class="p">,</span> <span class="s2">"Fund Coupon, for my ICO HiCoin"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">);</span>
 </code></pre>
-<p>Create a new survey using the ReviewChain survey contract.</p>
+<p>Create a new (empty) SKU using the ReviewChain survey contract.
+The SKU can later be populated with coupons of the SKU CouponType.</p>
 
 <table><thead>
 <tr>
@@ -770,12 +1017,6 @@ Function sender must be survey owner or data supplier for the survey.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>etherAmount</td>
-<td>number</td>
-<td>false</td>
-<td>Required for TokenCoupon type only. The total amount of Eth that will divide into the quantity of coupons created.</td>
-</tr>
-<tr>
 <td>sku</td>
 <td>string</td>
 <td>true</td>
@@ -785,7 +1026,71 @@ Function sender must be survey owner or data supplier for the survey.</p>
 <td>cType</td>
 <td>CouponType</td>
 <td>true</td>
-<td>The type of coupon to create, options: TokenCoupon or Coupon</td>
+<td>The type of coupon to create, options: [TokenCoupon, Coupon, FundCoupon]</td>
+</tr>
+<tr>
+<td>rewardToken</td>
+<td>CouponRewardTokenType</td>
+<td>false</td>
+<td>Only required for type TokenCoupon. This is the type of token that will be stored and given to the winning participant(s) upon redeeming. options: [NONE, ETH, RVC, ERC20]</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>true</td>
+<td>The name of the creator, or business name</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>string</td>
+<td>true</td>
+<td>The description of the coupon. This will be the core value for a coupon of type Coupon.</td>
+</tr>
+<tr>
+<td>couponImage</td>
+<td>string</td>
+<td>true</td>
+<td>The image representing each coupon</td>
+</tr>
+<tr>
+<td>lockupRelease</td>
+<td>number</td>
+<td>false</td>
+<td>Only required for type TokenCoupon. The date when the coupon can be redeemed, set in seconds since the Epoch in 1970. Use 0 for none.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>false</td>
+<td>Only required for type FundCoupon. The number of RVC tokens to implement as part of the failsafe/backup.</td>
+</tr>
+<tr>
+<td>RVC_tokens</td>
+<td>ERC20</td>
+<td>false</td>
+<td>Only required for type FundCoupon. ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.</td>
+</tr>
+</tbody></table>
+<h2 id='create-coupon-coupontype'>Create Coupon (CouponType)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createCoupon</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">createCoupon</span><span class="p">(</span><span class="s2">"MY-COUPON"</span><span class="p">,</span> <span class="s2">"My Business"</span><span class="p">,</span> <span class="s2">"1 Free meal"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img12.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<p>Create a new Coupon using the ReviewChain coupon contract.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU that will be set for all similar coupons created. All coupons can be referenced from the sku and more can be added to it.</td>
 </tr>
 <tr>
 <td>creator</td>
@@ -818,14 +1123,148 @@ Function sender must be survey owner or data supplier for the survey.</p>
 <td>The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.</td>
 </tr>
 </tbody></table>
-<h2 id='add-quantity-to-coupon-sku'>Add Quantity to Coupon SKU</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">addQuantity</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">)</span>
+<h2 id='create-tokencoupon-coupontype'>Create TokenCoupon (CouponType)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createTokenCoupon</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">sku</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">lockupRelease</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, ETH"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
+<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, RVC"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
+<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ERC20</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, ERC20"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
 </code></pre>
-<p>Add a quantity of similar coupons to an existing SKU.
-Coupons will all be similar under the SKU, besides a new expiration.
-Function sender must own the coupon SKU.</p>
+<p>Create a new TokenCoupon using the ReviewChain coupon contract.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>etherAmount</td>
+<td>number</td>
+<td>false</td>
+<td>Required for CouponRewardTokenType.ETH type only. The total amount of Eth that will divide into the quantity of coupons created.</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU that will be set for all coupons created</td>
+</tr>
+<tr>
+<td>rewardToken</td>
+<td>CouponRewardTokenType</td>
+<td>true</td>
+<td>This is the type of token that will be stored and given to the winning participant(s) upon redeeming. options: [NONE, ETH, RVC, ERC20]</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>true</td>
+<td>The name of the creator, or business name</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>string</td>
+<td>true</td>
+<td>The description of the coupon. This will be the core value for a coupon of type Coupon.</td>
+</tr>
+<tr>
+<td>couponImage</td>
+<td>string</td>
+<td>true</td>
+<td>The image representing each coupon</td>
+</tr>
+<tr>
+<td>lockupRelease</td>
+<td>number</td>
+<td>true</td>
+<td>The date when the coupon can be redeemed, set in seconds since the Epoch in 1970. Use 0 for none.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>number</td>
+<td>true</td>
+<td>The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.</td>
+</tr>
+<tr>
+<td>tokens</td>
+<td>ERC20</td>
+<td>false</td>
+<td>Only required for type CouponRewardTokenType that is not CouponRewardTokenType.ETH. ERC20 type of tokens stored for the coupon.</td>
+</tr>
+</tbody></table>
+<h2 id='create-fundcoupon-coupontype'>Create FundCoupon (CouponType)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createFundCoupon</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">createFundCoupon</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Fund Coupon, for my ICO"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">);</span>
+</code></pre>
+<p>Create a new FundCoupon using the ReviewChain coupon contract.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU that will be set for all coupons created</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>true</td>
+<td>The name of the creator, or business name</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>string</td>
+<td>true</td>
+<td>The description of the coupon. This will be the core value for a coupon of type Coupon.</td>
+</tr>
+<tr>
+<td>couponImage</td>
+<td>string</td>
+<td>true</td>
+<td>The image representing each coupon</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>false</td>
+<td>The number of custom ERC20 tokens that will be rewarded to each FundCoupon owner. Also, the number of RVC tokens to implement as part of the failsafe/backup.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>number</td>
+<td>true</td>
+<td>The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.</td>
+</tr>
+<tr>
+<td>RVC_tokens</td>
+<td>ERC20</td>
+<td>false</td>
+<td>ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.</td>
+</tr>
+</tbody></table>
+<h2 id='add-quantity-to-coupon-sku-that-is-populated'>Add Quantity to Coupon SKU that is Populated</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">addQuantity</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">transferOnCreation</span><span class="p">,</span> <span class="nx">_transferTo</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">398324298</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">);</span>
+<span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+</code></pre>
+<p>Add a quantity of similar coupons to an existing SKU that has coupons in it.
+SKU must contain at least 1 coupon already.
+Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
+Function caller must own the coupon SKU.
+Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.</p>
 
 <table><thead>
 <tr>
@@ -844,14 +1283,180 @@ Function sender must own the coupon SKU.</p>
 <tr>
 <td>expiration</td>
 <td>number</td>
-<td>true</td>
-<td>Expiration for the new batch of added coupons. This expiration can be different than previously set.</td>
+<td>false</td>
+<td>Only required if SKU contains coupons of CouponType Coupon, otherwise defaulted to 0 expiration. Expiration for the new batch of added coupons. This expiration can be different than previously in teh last batch of created coupons.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td>number</td>
 <td>true</td>
 <td>The number of coupons to add to the SKU</td>
+</tr>
+<tr>
+<td>transferOnCreation</td>
+<td>boolean</td>
+<td>true</td>
+<td>Determine if coupon should be automatically transferred upon creation</td>
+</tr>
+<tr>
+<td>_transferTo</td>
+<td>string</td>
+<td>true</td>
+<td>If transferred automatically, this is the Eth receiving address</td>
+</tr>
+</tbody></table>
+<h2 id='create-the-initial-example-for-the-coupon-under-an-empty-sku'>Create the Initial Example for the Coupon under an Empty SKU</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createInitialCoupons</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">_value</span><span class="p">,</span> <span class="nx">transferOnCreation</span><span class="p">,</span> <span class="nx">_transferTo</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">createInitialCoupons</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">398324298</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">createInitialCoupons</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">);</span>
+<span class="nx">createInitialCoupons</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+</code></pre>
+<p>Add a quantity of similar coupons to an existing SKU that does not yet have any coupons in it.
+SKU must contain 0 coupons.
+Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
+Function caller must own the coupon SKU.
+Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU for the coupons to add to. Must own the SKU in order to add quantity. Must be an existing SKU.</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>number</td>
+<td>false</td>
+<td>Only required if SKU contains coupons of CouponType Coupon, otherwise defaulted to 0 expiration. Expiration for the new batch of added coupons. This expiration can be different than previously in teh last batch of created coupons.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>number</td>
+<td>true</td>
+<td>The number of coupons to add to the SKU</td>
+</tr>
+<tr>
+<td>_value</td>
+<td>number</td>
+<td>false</td>
+<td>Only required for an SKU with coupons of CouponType FundCoupon. The number of tokens that a FundCoupon is entitled to.</td>
+</tr>
+<tr>
+<td>transferOnCreation</td>
+<td>boolean</td>
+<td>true</td>
+<td>Determine if coupon should be automatically transferred upon creation</td>
+</tr>
+<tr>
+<td>_transferTo</td>
+<td>string</td>
+<td>true</td>
+<td>If transferred automatically, this is the Eth receiving address</td>
+</tr>
+</tbody></table>
+<h2 id='refund-rvc-tokens-in-an-escrow-fund'>Refund RVC Tokens in an Escrow Fund</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">refundRVC</span><span class="p">(</span><span class="nx">sku</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">refundRVC</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">);</span>
+</code></pre>
+<p>SKU owner receives all locked RVC tokens that supported a FundCoupon failsafe.
+Function caller must own the coupon SKU.
+SKU CouponType must be type FundCoupon.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU connected to the Escrow Fund. Must be an existing SKU.</td>
+</tr>
+</tbody></table>
+<h2 id='execute-fundcoupon-airdrop-separate-from-airdrops-related-to-surveys'>Execute FundCoupon Airdrop (Separate from Airdrops related to Surveys)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">airdropTokens</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">airdropTokens</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
+</code></pre>
+<p>Executes an airdrop, rewarding all vouchers/FundCoupons under the given SKU with the promised tokens.
+Function caller must own the coupon SKU. SKU CouponType must be type FundCoupon. SKU must still be valid.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU connected to the Escrow Fund. Must be an existing SKU.</td>
+</tr>
+</tbody></table>
+<h2 id='execute-rvc-airdrop-separate-from-airdrops-related-to-surveys'>Execute RVC Airdrop (Separate from Airdrops related to Surveys)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">airdropRVC</span><span class="p">(</span><span class="nx">sku</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">airdropRVC</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">);</span>
+</code></pre>
+<p>Executes an airdrop, rewarding all vouchers/FundCoupons under the given SKU with the backup/failsafe RVC tokens.
+Function caller must own the coupon SKU. SKU CouponType must be type FundCoupon. SKU must still be valid.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>The unique SKU connected to the Escrow Fund. Must be an existing SKU.</td>
+</tr>
+</tbody></table>
+<h2 id='redeem-a-coupon'>Redeem a Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">redeemCoupon</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">redeemCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">redeemCoupon</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre>
+<p>Redeem a specific coupon, settings its CouponStatus to Redeemed.
+If the coupon is of CouponType TokenCoupon, release the tokens in escrow to the coupon owner if the lockupRelease date set on creation has passed.
+Function sender must own the coupon id and the coupon must be valid to redeem it.
+CouponType cannot be type FundCoupon.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>couponId</td>
+<td>number</td>
+<td>true</td>
+<td>The ID of the coupon.</td>
 </tr>
 </tbody></table>
 <h2 id='transfer-a-coupon'>Transfer a Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">transferCoupon</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">couponId</span><span class="p">)</span>
@@ -913,30 +1518,6 @@ Function sender must own the coupon SKU.</p>
 <td>SKU to transfer</td>
 </tr>
 </tbody></table>
-<h2 id='redeem-a-coupon'>Redeem a Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">redeemCoupon</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
-
-<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">redeemCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="nx">redeemCoupon</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</code></pre>
-<p>Redeem a specific coupon, settings its CouponStatus to Redeemed.
-Function sender must own the coupon id and the coupon must be valid to redeem it.</p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Datatype</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>couponId</td>
-<td>number</td>
-<td>true</td>
-<td>The ID of the coupon.</td>
-</tr>
-</tbody></table>
 <h2 id='get-the-number-of-total-coupons-in-circulation'>Get the Number of Total Coupons in Circulation</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponsLength</span><span class="p">()</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
@@ -991,14 +1572,40 @@ Function sender must own the coupon id and the coupon must be valid to redeem it
 <td>Coupon ID number</td>
 </tr>
 </tbody></table>
-<h2 id='get-coupon-data-for-a-given-coupon'>Get Coupon Data for a Given Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponById</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+<h2 id='get-coupon-data-details-for-a-given-coupon'>Get Coupon Data/Details for a Given Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponDetails</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getCouponById</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="nx">getCouponById</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="nx">getCouponById</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">getCouponDetails</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getCouponDetails</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getCouponDetails</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
-<p>Get the data for a coupon, given the coupon id (number).</p>
+<p>Get the data for a coupon, given the coupon id (number).
+This returns: the coupons sku id, the CouponType, the creator, the description, the coupon image, the coupon owner.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>couponId</td>
+<td>number</td>
+<td>true</td>
+<td>Coupon ID number</td>
+</tr>
+</tbody></table>
+<h2 id='get-coupon-reward-data-details-for-a-given-coupon'>Get Coupon Reward Data/Details for a Given Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponReward</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">getCouponReward</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getCouponReward</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getCouponReward</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<p>Get the reward data for a coupon, given the coupon id (number).
+This returns: the coupons sku id, the CouponRewardTokenType, the lockup release date when the tokens (TokenCoupon) can be claimed, the coupon value, the coupon owner.</p>
 
 <table><thead>
 <tr>
@@ -1069,8 +1676,13 @@ Function sender must own the coupon id and the coupon must be valid to redeem it
 <span class="nx">getCouponState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">getCouponState</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
-<p>Get the state of a coupon (Valid, Expired, Redeemed), given the coupon id (number).
-Wil return string, the coupon state.</p>
+<p>Get the state of a coupon (Valid, Expired, Redeemed, Invalid), given the coupon id (number).
+Will return (string state, uint expiration), the coupon state and its expiration date (in seconds since the Epoch), after checking the following in order.
+If the SKU is invalid: &quot;invalid&quot;
+If the coupon is redeemed: &quot;redeemed&quot;
+If the coupon expiration is 0: &quot;valid&quot;
+If the coupon is expired: &quot;expired&quot;
+If the coupon is valid: &quot;valid&quot;</p>
 
 <table><thead>
 <tr>
