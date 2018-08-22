@@ -116,7 +116,6 @@ couponCreator | string    | true    	| The name of the creator, or business name
 couponDesc    | string    | true    	| The description for each coupon
 couponImage   | string    | true    	| The image representing each coupon
 couponValue   | number    | true    	| The value is the amount/number of tokens that will be rewarded/sent to the FundCoupon holder upon the airdrop
-RVC_tokens    | ERC20     | false    	| ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.
 
 
 
@@ -126,10 +125,10 @@ RVC_tokens    | ERC20     | false    	| ERC20 type of RVC contract for failsafe 
 createSurvey(etherAmount, name, reward, rewardToken, tokens, rewardCouponId, status, dataSupplier, maxParticipants)
 
 Example calls:
-createSurvey(0, "My Individual Payment Survey", RewardType.IndividualPayment, SurveyRewardTokenType.RVC, tokens, 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 100);
-createSurvey(1, "My Raffle Reward Survey", RewardType.TokenRaffle, SurveyRewardTokenType.ETH, tokens, 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-createSurvey(0.01, "My Bounty Payment Survey", RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, tokens, 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-createSurvey(0.01, "My Coupon Reward Survey", RewardType.Coupon, SurveyRewardTokenType.NONE, tokens, 11, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
+createSurvey(0, "My Individual Payment Survey", RewardType.IndividualPayment, SurveyRewardTokenType.RVC, "0x...", 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 100);
+createSurvey(1, "My Raffle Reward Survey", RewardType.TokenRaffle, SurveyRewardTokenType.ETH, "0x0", 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
+createSurvey(0.01, "My Bounty Payment Survey", RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, "0x0", 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
+createSurvey(0.01, "My Coupon Reward Survey", RewardType.Coupon, SurveyRewardTokenType.NONE, "0x0", 11, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
 ```
 
 Create a new survey (any RewardType besides AirdropCoupon) using the ReviewChain survey contract.
@@ -141,7 +140,7 @@ etherAmount | number      | false   	| Required for all RewardTypes besides Coup
 name    	| string      | true    	| name of the survey
 reward    	| RewardType  | true    	| type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]
 rewardToken | SurveyRewardTokenType | false | Not required for Coupon RewardType. This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]
-tokens    	| ERC20       | false    	| ERC20 type for custom payment tokens. Only required if creator would like to implement custom ERC20 token.
+tokens    	| string      | false    	| Address of ERC20 type token for custom payment tokens. Only required if creator would like to implement custom ERC20 token.
 rewardCouponId | number   | false     	| Only required for Coupon RewardType. This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.
 status    	| SurveyStatus| true    	| Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.
 dataSupplier| String      | true    	| Eth Address of a data supplier to adjust survey besides the owner
@@ -199,7 +198,7 @@ surveyId  	| number    | true    | ID of survey to reward
 completeSurveyAirdrop(_surveyId, tokens)
 
 Example calls:
-completeSurveyAirdrop(24, tokens);
+completeSurveyAirdrop(24, "0x...");
 ```
 
 If the RewardType is AirdropCoupon, fund all the FundCoupon vouchers under the sku of the specific survey with the respective tokens that were declared on creation.
@@ -212,7 +211,7 @@ This Function can only be called with surveys of RewardType AirdropCoupon.
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
 surveyId  	| number    | true    	| ID of survey
-tokens 		| ERC20     | true   	| ERC20 tokens to distribute to respective FundCoupon owners.
+tokens 		| string    | true   	| Address of ERC20 type token. ERC20 tokens to distribute to respective FundCoupon owners.
 
 
 
@@ -508,7 +507,6 @@ desc    	| string      | true    | The description of the coupon. This will be t
 couponImage | string      | true    | The image representing each coupon
 lockupRelease | number    | false   | Only required for type TokenCoupon. The date when the coupon can be redeemed, set in seconds since the Epoch in 1970. Use 0 for none.
 value    	| number      | false   | Only required for type FundCoupon. The number of RVC tokens to implement as part of the failsafe/backup.
-RVC_tokens  | ERC20       | false   | Only required for type FundCoupon. ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.
 
 
 
@@ -541,9 +539,9 @@ quantity    | number      | true    | The number of coupons to generate, with th
 createTokenCoupon(etherAmount, sku, rewardToken, creator, desc, couponImage, lockupRelease, quantity, tokens)
 
 Example calls:
-createTokenCoupon(0.01, "MY-TOKENCOUPON-SKU", CouponRewardTokenType.ETH, "Max's Business", "Token Coupon, no expiration, ETH", "http://images.com/images/img1.jpg", 0, 2, tokens);
-createTokenCoupon(0, "MY-TOKENCOUPON-SKU", CouponRewardTokenType.RVC, "Max's Business", "Token Coupon, no expiration, RVC", "http://images.com/images/img1.jpg", 0, 2, tokens);
-createTokenCoupon(0, "MY-TOKENCOUPON-SKU", CouponRewardTokenType.ERC20, "Max's Business", "Token Coupon, no expiration, ERC20", "http://images.com/images/img1.jpg", 0, 2, tokens);
+createTokenCoupon(0.01, "MY-TOKENCOUPON-SKU", CouponRewardTokenType.ETH, "Max's Business", "Token Coupon, no expiration, ETH", "http://images.com/images/img1.jpg", 0, 2, "0x0");
+createTokenCoupon(0, "MY-TOKENCOUPON-SKU", CouponRewardTokenType.RVC, "Max's Business", "Token Coupon, no expiration, RVC", "http://images.com/images/img1.jpg", 0, 2, "0x...");
+createTokenCoupon(0, "MY-TOKENCOUPON-SKU", CouponRewardTokenType.ERC20, "Max's Business", "Token Coupon, no expiration, ERC20", "http://images.com/images/img1.jpg", 0, 2, "0x...");
 ```
 
 Create a new TokenCoupon using the ReviewChain coupon contract.
@@ -559,7 +557,7 @@ desc    	| string      | true    | The description of the coupon. This will be t
 couponImage | string      | true    | The image representing each coupon
 lockupRelease | number    | true    | The date when the coupon can be redeemed, set in seconds since the Epoch in 1970. Use 0 for none.
 quantity    | number      | true    | The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.
-tokens  	| ERC20       | false   | Only required for type CouponRewardTokenType that is not CouponRewardTokenType.ETH. ERC20 type of tokens stored for the coupon.
+tokens  	| string      | false   | Address of ERC20 type token. Only required for type CouponRewardTokenType that is not CouponRewardTokenType.ETH. ERC20 type of tokens stored for the coupon.
 
 
 
@@ -573,6 +571,7 @@ createFundCoupon("MY-FUNDCOUPON-SKU", "Max's Business", "Fund Coupon, for my ICO
 ```
 
 Create a new FundCoupon using the ReviewChain coupon contract.
+Can link to backup RVC Token Escrow Fund as well.
 
 
 Param     | Datatype    | Required  | Description
@@ -583,7 +582,6 @@ desc    	| string      | true    | The description of the coupon. This will be t
 couponImage | string      | true    | The image representing each coupon
 value    	| number      | false   | The number of custom ERC20 tokens that will be rewarded to each FundCoupon owner. Also, the number of RVC tokens to implement as part of the failsafe/backup.
 quantity    | number      | true    | The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.
-RVC_tokens  | ERC20       | false   | ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.
 
 
 
