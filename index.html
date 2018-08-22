@@ -491,20 +491,14 @@ Add these values for equivalent coupon and survey enum types.</p>
 <td>true</td>
 <td>The value is the amount/number of tokens that will be rewarded/sent to the FundCoupon holder upon the airdrop</td>
 </tr>
-<tr>
-<td>RVC_tokens</td>
-<td>ERC20</td>
-<td>false</td>
-<td>ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.</td>
-</tr>
 </tbody></table>
 <h2 id='create-survey'>Create Survey</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createSurvey</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">maxParticipants</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Coupon Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">NONE</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Coupon Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">NONE</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
 <p>Create a new survey (any RewardType besides AirdropCoupon) using the ReviewChain survey contract.</p>
 
@@ -542,9 +536,9 @@ Add these values for equivalent coupon and survey enum types.</p>
 </tr>
 <tr>
 <td>tokens</td>
-<td>ERC20</td>
+<td>string</td>
 <td>false</td>
-<td>ERC20 type for custom payment tokens. Only required if creator would like to implement custom ERC20 token.</td>
+<td>Address of ERC20 type token for custom payment tokens. Only required if creator would like to implement custom ERC20 token.</td>
 </tr>
 <tr>
 <td>rewardCouponId</td>
@@ -638,7 +632,7 @@ This Function cannot be called with surveys of RewardType IndividualPayment or s
 <h2 id='complete-survey-airdrop'>Complete Survey Airdrop</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">completeSurveyAirdrop</span><span class="p">(</span><span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">completeSurveyAirdrop</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
+<span class="nx">completeSurveyAirdrop</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">);</span>
 </code></pre>
 <p>If the RewardType is AirdropCoupon, fund all the FundCoupon vouchers under the sku of the specific survey with the respective tokens that were declared on creation.
 Ensure caller sends an amount of their tokens equal to the value declared per voucher/FundCoupons on creation multiplied by the number of vouchers/FundCoupons distributed (value * numFundCoupons).
@@ -663,9 +657,9 @@ This Function can only be called with surveys of RewardType AirdropCoupon.</p>
 </tr>
 <tr>
 <td>tokens</td>
-<td>ERC20</td>
+<td>string</td>
 <td>true</td>
-<td>ERC20 tokens to distribute to respective FundCoupon owners.</td>
+<td>Address of ERC20 type token. ERC20 tokens to distribute to respective FundCoupon owners.</td>
 </tr>
 </tbody></table>
 <h2 id='complete-rvc-airdrop'>Complete RVC Airdrop</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">completeRVCAirdrop</span><span class="p">(</span><span class="nx">_surveyId</span><span class="p">)</span>
@@ -1064,12 +1058,6 @@ The SKU can later be populated with coupons of the SKU CouponType.</p>
 <td>false</td>
 <td>Only required for type FundCoupon. The number of RVC tokens to implement as part of the failsafe/backup.</td>
 </tr>
-<tr>
-<td>RVC_tokens</td>
-<td>ERC20</td>
-<td>false</td>
-<td>Only required for type FundCoupon. ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.</td>
-</tr>
 </tbody></table>
 <h2 id='create-coupon-coupontype'>Create Coupon (CouponType)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createCoupon</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">)</span>
 
@@ -1126,9 +1114,9 @@ The SKU can later be populated with coupons of the SKU CouponType.</p>
 <h2 id='create-tokencoupon-coupontype'>Create TokenCoupon (CouponType)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createTokenCoupon</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">sku</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">lockupRelease</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, ETH"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
-<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, RVC"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
-<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ERC20</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, ERC20"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">);</span>
+<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, ETH"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">);</span>
+<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, RVC"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">);</span>
+<span class="nx">createTokenCoupon</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="nx">CouponRewardTokenType</span><span class="p">.</span><span class="nx">ERC20</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Token Coupon, no expiration, ERC20"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">);</span>
 </code></pre>
 <p>Create a new TokenCoupon using the ReviewChain coupon contract.</p>
 
@@ -1190,9 +1178,9 @@ The SKU can later be populated with coupons of the SKU CouponType.</p>
 </tr>
 <tr>
 <td>tokens</td>
-<td>ERC20</td>
+<td>string</td>
 <td>false</td>
-<td>Only required for type CouponRewardTokenType that is not CouponRewardTokenType.ETH. ERC20 type of tokens stored for the coupon.</td>
+<td>Address of ERC20 type token. Only required for type CouponRewardTokenType that is not CouponRewardTokenType.ETH. ERC20 type of tokens stored for the coupon.</td>
 </tr>
 </tbody></table>
 <h2 id='create-fundcoupon-coupontype'>Create FundCoupon (CouponType)</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createFundCoupon</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">)</span>
@@ -1200,7 +1188,8 @@ The SKU can later be populated with coupons of the SKU CouponType.</p>
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">createFundCoupon</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="s2">"Max's Business"</span><span class="p">,</span> <span class="s2">"Fund Coupon, for my ICO"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img1.jpg"</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">);</span>
 </code></pre>
-<p>Create a new FundCoupon using the ReviewChain coupon contract.</p>
+<p>Create a new FundCoupon using the ReviewChain coupon contract.
+Can link to backup RVC Token Escrow Fund as well.</p>
 
 <table><thead>
 <tr>
@@ -1245,12 +1234,6 @@ The SKU can later be populated with coupons of the SKU CouponType.</p>
 <td>number</td>
 <td>true</td>
 <td>The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.</td>
-</tr>
-<tr>
-<td>RVC_tokens</td>
-<td>ERC20</td>
-<td>false</td>
-<td>ERC20 type of RVC contract for failsafe tokens. Only required if creator would like to implement a failsafe.</td>
 </tr>
 </tbody></table>
 <h2 id='add-quantity-to-coupon-sku-that-is-populated'>Add Quantity to Coupon SKU that is Populated</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">addQuantity</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">transferOnCreation</span><span class="p">,</span> <span class="nx">_transferTo</span><span class="p">)</span>
