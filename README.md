@@ -97,10 +97,10 @@ A simple interface to access the ReviewChain Surveys Contract for Survey incenti
 ## Create Airdrop Survey
 
 ```javascript
-createAirdropSurvey(name, status, dataSupplier, couponSKU, couponCreator, couponDesc, couponImage, couponValue, valueRVC, RVC_tokens)
+createAirdropSurvey(name, status, dataSupplier, couponSKU, couponCreator, couponDesc, couponImage, couponValue)
 
 Example calls:
-createAirdropSurvey("My ICO Airdrop Survey", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", "SKU-For-Airdrop-Survey", "My Business", "Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund", "http://images.com/images/img12.jpg", 100, 200, RVC_tokens);
+createAirdropSurvey("My ICO Airdrop Survey", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", "SKU-For-Airdrop-Survey", "My Business", "Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund", "http://images.com/images/img12.jpg", 100);
 ```
 
 Create a new airdrop survey (survey RewardType of AirdropCoupon) using the ReviewChain survey contract.
@@ -486,12 +486,12 @@ A simple interface to access the ReviewChain Coupons Contract for Coupon creatio
 ## Create SKU
 
 ```javascript
-createSKU(sku, cType, rewardToken, creator, desc, couponImage, lockupRelease, value, RVC_tokens)
+createSKU(sku, cType, rewardToken, creator, desc, couponImage, lockupRelease, value)
 
 Example calls:
-createSKU("MY-COUPON-SKU", CouponType.Coupon, CouponRewardTokenType.NONE, "My Business", "1 Free meal", "http://images.com/images/img12.jpg", 0, 0, RVC_tokens);
-createSKU("MY-TOKENCOUPON-SKU", CouponType.TokenCoupon, CouponRewardTokenType.ERC20, "Max's Business", "Token Coupon, no expiration", "http://images.com/images/img1.jpg", lockupRelease, 0, RVC_tokens);
-createSKU("MY-FUNDCOUPON-SKU", CouponType.FundCoupon, CouponRewardTokenType.NONE, "My ICO", "Fund Coupon, for my ICO HiCoin", "http://images.com/images/img1.jpg", 0, 100, RVC_tokens);
+createSKU("MY-COUPON-SKU", CouponType.Coupon, CouponRewardTokenType.NONE, "My Business", "1 Free meal", "http://images.com/images/img12.jpg", 0, 0);
+createSKU("MY-TOKENCOUPON-SKU", CouponType.TokenCoupon, CouponRewardTokenType.ERC20, "Max's Business", "Token Coupon, no expiration", "http://images.com/images/img1.jpg", lockupRelease, 0);
+createSKU("MY-FUNDCOUPON-SKU", CouponType.FundCoupon, CouponRewardTokenType.NONE, "My ICO", "Fund Coupon, for my ICO HiCoin", "http://images.com/images/img1.jpg", 0, 100);
 ```
 
 Create a new (empty) SKU using the ReviewChain survey contract.
@@ -564,10 +564,10 @@ tokens  	| string      | false   | Address of ERC20 type token. Only required fo
 ## Create FundCoupon (CouponType)
 
 ```javascript
-createFundCoupon(sku, creator, desc, couponImage, value, quantity, RVC_tokens)
+createFundCoupon(sku, creator, desc, couponImage, value, quantity)
 
 Example calls:
-createFundCoupon("MY-FUNDCOUPON-SKU", "Max's Business", "Fund Coupon, for my ICO", "http://images.com/images/img1.jpg", 20, 2, RVC_tokens);
+createFundCoupon("MY-FUNDCOUPON-SKU", "Max's Business", "Fund Coupon, for my ICO", "http://images.com/images/img1.jpg", 20, 2);
 ```
 
 Create a new FundCoupon using the ReviewChain coupon contract.
