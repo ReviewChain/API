@@ -241,9 +241,6 @@
                     <a href="#create-airdrop-survey" class="toc-h2 toc-link" data-title="Create Airdrop Survey">Create Airdrop Survey</a>
                   </li>
                   <li>
-                    <a href="#create-survey" class="toc-h2 toc-link" data-title="Create Survey">Create Survey</a>
-                  </li>
-                  <li>
                     <a href="#create-coupon-reward-survey" class="toc-h2 toc-link" data-title="Create Coupon Reward Survey">Create Coupon Reward Survey</a>
                   </li>
                   <li>
@@ -507,83 +504,6 @@ Add these values for equivalent coupon and survey enum types.</p>
 <td>The value is the amount/number of RVC tokens that will be rewarded/sent to all (divided evenly) FundCoupon holders if the ICO airdrop fails, failsafe/backup payout. RVC tokens must be sent to the generated exscrow contract.</td>
 </tr>
 </tbody></table>
-
-<p>/*</p>
-<h2 id='create-survey'>Create Survey</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createSurvey</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">maxParticipants</span><span class="p">)</span>
-
-<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">createSurvey</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">"My Coupon Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">Coupon</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">NONE</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</code></pre>
-<p>Create a new survey (any RewardType besides AirdropCoupon) using the ReviewChain survey contract.</p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Datatype</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>etherAmount</td>
-<td>number</td>
-<td>false</td>
-<td>Required for all RewardTypes besides Coupon. Used as the rewardValue stored for the survey reward</td>
-</tr>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>true</td>
-<td>name of the survey</td>
-</tr>
-<tr>
-<td>reward</td>
-<td>RewardType</td>
-<td>true</td>
-<td>type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]</td>
-</tr>
-<tr>
-<td>rewardToken</td>
-<td>SurveyRewardTokenType</td>
-<td>false</td>
-<td>Not required for Coupon RewardType. This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]</td>
-</tr>
-<tr>
-<td>tokens</td>
-<td>string</td>
-<td>false</td>
-<td>Address of ERC20 type token for custom payment tokens. Only required if creator would like to implement custom ERC20 token.</td>
-</tr>
-<tr>
-<td>rewardCouponId</td>
-<td>number</td>
-<td>false</td>
-<td>Only required for Coupon RewardType. This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>SurveyStatus</td>
-<td>true</td>
-<td>Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.</td>
-</tr>
-<tr>
-<td>dataSupplier</td>
-<td>String</td>
-<td>true</td>
-<td>Eth Address of a data supplier to adjust survey besides the owner</td>
-</tr>
-<tr>
-<td>maxParticipants</td>
-<td>number</td>
-<td>false</td>
-<td>Only required for IndividualPayment RewardType. This value is used to calculate how many participants to pay and how much to give to each.</td>
-</tr>
-</tbody></table>
-
-<p>*/</p>
 <h2 id='create-coupon-reward-survey'>Create Coupon Reward Survey</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createCouponRewardSurvey</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
