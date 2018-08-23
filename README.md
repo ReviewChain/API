@@ -119,35 +119,6 @@ couponValue   | number    | true    	| The value is the amount/number of tokens 
 RVC_tokens    | number    | true    	| The value is the amount/number of RVC tokens that will be rewarded/sent to all (divided evenly) FundCoupon holders if the ICO airdrop fails, failsafe/backup payout. RVC tokens must be sent to the generated exscrow contract.
 
 
-/*
-## Create Survey
-
-```javascript
-createSurvey(etherAmount, name, reward, rewardToken, tokens, rewardCouponId, status, dataSupplier, maxParticipants)
-
-Example calls:
-createSurvey(0, "My Individual Payment Survey", RewardType.IndividualPayment, SurveyRewardTokenType.RVC, "0x...", 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 100);
-createSurvey(1, "My Raffle Reward Survey", RewardType.TokenRaffle, SurveyRewardTokenType.ETH, "0x0", 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-createSurvey(0.01, "My Bounty Payment Survey", RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, "0x0", 0, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-createSurvey(0.01, "My Coupon Reward Survey", RewardType.Coupon, SurveyRewardTokenType.NONE, "0x0", 11, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-```
-
-Create a new survey (any RewardType besides AirdropCoupon) using the ReviewChain survey contract.
-
-
-Param     | Datatype    | Required  | Description
------------ | ----------- | ----------- | -----------
-etherAmount | number      | false   	| Required for all RewardTypes besides Coupon. Used as the rewardValue stored for the survey reward
-name    	| string      | true    	| name of the survey
-reward    	| RewardType  | true    	| type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]
-rewardToken | SurveyRewardTokenType | false | Not required for Coupon RewardType. This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]
-tokens    	| string      | false    	| Address of ERC20 type token for custom payment tokens. Only required if creator would like to implement custom ERC20 token.
-rewardCouponId | number   | false     	| Only required for Coupon RewardType. This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.
-status    	| SurveyStatus| true    	| Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.
-dataSupplier| String      | true    	| Eth Address of a data supplier to adjust survey besides the owner
-maxParticipants| number   | false    	| Only required for IndividualPayment RewardType. This value is used to calculate how many participants to pay and how much to give to each.
-*/
-
 
 ## Create Coupon Reward Survey
 
