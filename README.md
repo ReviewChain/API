@@ -654,35 +654,6 @@ _transferTo | string    | true    | If transferred automatically, this is the Et
 
 
 
-## Create the Initial Example for the Coupon under an Empty SKU
-
-```javascript
-createInitialCoupons(sku, expiration, quantity, _value, transferOnCreation, _transferTo)
-
-Example calls:
-createInitialCoupons("MY-COUPON-SKU", 398324298, 3, 0, true, "0x011a28420578a06728dd537754d0f3d9b73e5f57");
-createInitialCoupons("MY-TOKENCOUPON-SKU", 0, 1, 0, false, "0x0");
-createInitialCoupons("MY-FUNDCOUPON-SKU", 0, 2, 45, true, "0x011a28420578a06728dd537754d0f3d9b73e5f57");
-```
-
-Add a quantity of similar coupons to an existing SKU that does not yet have any coupons in it.
-SKU must contain 0 coupons.
-Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
-Function caller must own the coupon SKU.
-Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.
-
-
-Param     | Datatype    | Required  | Description
------------ | ----------- | ----------- | -----------
-sku     	| string    | true    | The unique SKU for the coupons to add to. Must own the SKU in order to add quantity. Must be an existing SKU.
-expiration  | number    | false   | Only required if SKU contains coupons of CouponType Coupon, otherwise defaulted to 0 expiration. Expiration for the new batch of added coupons. This expiration can be different than previously in teh last batch of created coupons.
-quantity  	| number    | true    | The number of coupons to add to the SKU
-_value  	| number    | false   | Only required for an SKU with coupons of CouponType FundCoupon. The number of tokens that a FundCoupon is entitled to.
-transferOnCreation | boolean | true | Determine if coupon should be automatically transferred upon creation
-_transferTo | string    | true    | If transferred automatically, this is the Eth receiving address
-
-
-
 ## Refund RVC Tokens in an Escrow Fund
 
 ```javascript

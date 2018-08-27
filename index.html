@@ -318,9 +318,6 @@
                     <a href="#add-quantity-to-coupon-sku-that-is-populated" class="toc-h2 toc-link" data-title="Add Quantity to Coupon SKU that is Populated">Add Quantity to Coupon SKU that is Populated</a>
                   </li>
                   <li>
-                    <a href="#create-the-initial-example-for-the-coupon-under-an-empty-sku" class="toc-h2 toc-link" data-title="Create the Initial Example for the Coupon under an Empty SKU">Create the Initial Example for the Coupon under an Empty SKU</a>
-                  </li>
-                  <li>
                     <a href="#refund-rvc-tokens-in-an-escrow-fund" class="toc-h2 toc-link" data-title="Refund RVC Tokens in an Escrow Fund">Refund RVC Tokens in an Escrow Fund</a>
                   </li>
                   <li>
@@ -1339,64 +1336,6 @@ Option: on creation, the coupon can be given ownership under a different address
 <td>number</td>
 <td>true</td>
 <td>The number of coupons to add to the SKU</td>
-</tr>
-<tr>
-<td>transferOnCreation</td>
-<td>boolean</td>
-<td>true</td>
-<td>Determine if coupon should be automatically transferred upon creation</td>
-</tr>
-<tr>
-<td>_transferTo</td>
-<td>string</td>
-<td>true</td>
-<td>If transferred automatically, this is the Eth receiving address</td>
-</tr>
-</tbody></table>
-<h2 id='create-the-initial-example-for-the-coupon-under-an-empty-sku'>Create the Initial Example for the Coupon under an Empty SKU</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">createInitialCoupons</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">_value</span><span class="p">,</span> <span class="nx">transferOnCreation</span><span class="p">,</span> <span class="nx">_transferTo</span><span class="p">)</span>
-
-<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">createInitialCoupons</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">398324298</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
-<span class="nx">createInitialCoupons</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">);</span>
-<span class="nx">createInitialCoupons</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
-</code></pre>
-<p>Add a quantity of similar coupons to an existing SKU that does not yet have any coupons in it.
-SKU must contain 0 coupons.
-Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
-Function caller must own the coupon SKU.
-Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.</p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Datatype</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>sku</td>
-<td>string</td>
-<td>true</td>
-<td>The unique SKU for the coupons to add to. Must own the SKU in order to add quantity. Must be an existing SKU.</td>
-</tr>
-<tr>
-<td>expiration</td>
-<td>number</td>
-<td>false</td>
-<td>Only required if SKU contains coupons of CouponType Coupon, otherwise defaulted to 0 expiration. Expiration for the new batch of added coupons. This expiration can be different than previously in teh last batch of created coupons.</td>
-</tr>
-<tr>
-<td>quantity</td>
-<td>number</td>
-<td>true</td>
-<td>The number of coupons to add to the SKU</td>
-</tr>
-<tr>
-<td>_value</td>
-<td>number</td>
-<td>false</td>
-<td>Only required for an SKU with coupons of CouponType FundCoupon. The number of tokens that a FundCoupon is entitled to.</td>
 </tr>
 <tr>
 <td>transferOnCreation</td>
