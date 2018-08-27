@@ -626,7 +626,7 @@ quantity    | number      | true    | The number of coupons to generate, with th
 
 
 
-## Add Quantity to Coupon SKU that is Populated
+## Add Quantity to Coupon SKU
 
 ```javascript
 addQuantity(sku, expiration, quantity, transferOnCreation, _transferTo)
@@ -638,7 +638,6 @@ addQuantity("MY-FUNDCOUPON-SKU", 0, 1, true, "0x011a28420578a06728dd537754d0f3d9
 ```
 
 Add a quantity of similar coupons to an existing SKU that has coupons in it.
-SKU must contain at least 1 coupon already.
 Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
 Function caller must own the coupon SKU.
 Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.
