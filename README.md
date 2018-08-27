@@ -629,7 +629,7 @@ quantity    | number      | true    | The number of coupons to generate, with th
 ## Add Quantity to Coupon SKU
 
 ```javascript
-addQuantity(sku, expiration, quantity, transferOnCreation, _transferTo)
+addQuantity(sku, expiration, quantity, _transferTo)
 
 Example calls:
 addQuantity("MY-COUPON-SKU", 398324298, 1, true, "0x011a28420578a06728dd537754d0f3d9b73e5f57");
@@ -637,7 +637,7 @@ addQuantity("MY-TOKENCOUPON-SKU", 0, 1, false, "0x0");
 addQuantity("MY-FUNDCOUPON-SKU", 0, 1, true, "0x011a28420578a06728dd537754d0f3d9b73e5f57");
 ```
 
-Add a quantity of similar coupons to an existing SKU that has coupons in it.
+Add a quantity of similar coupons to an existing SKU.
 Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
 Function caller must own the coupon SKU.
 Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.
@@ -648,7 +648,6 @@ Param     | Datatype    | Required  | Description
 sku     	| string    | true    | The unique SKU for the coupons to add to. Must own the SKU in order to add quantity. Must be an existing SKU.
 expiration  | number    | false   | Only required if SKU contains coupons of CouponType Coupon, otherwise defaulted to 0 expiration. Expiration for the new batch of added coupons. This expiration can be different than previously in teh last batch of created coupons.
 quantity  	| number    | true    | The number of coupons to add to the SKU
-transferOnCreation | boolean | true | Determine if coupon should be automatically transferred upon creation
 _transferTo | string    | true    | If transferred automatically, this is the Eth receiving address
 
 

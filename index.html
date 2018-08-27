@@ -1298,14 +1298,14 @@ Can link to backup RVC Token Escrow Fund as well.</p>
 <td>The number of coupons to generate, with the given SKU. Each coupon is given its own unique ID.</td>
 </tr>
 </tbody></table>
-<h2 id='add-quantity-to-coupon-sku'>Add Quantity to Coupon SKU</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">addQuantity</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">transferOnCreation</span><span class="p">,</span> <span class="nx">_transferTo</span><span class="p">)</span>
+<h2 id='add-quantity-to-coupon-sku'>Add Quantity to Coupon SKU</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">addQuantity</span><span class="p">(</span><span class="nx">sku</span><span class="p">,</span> <span class="nx">expiration</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">_transferTo</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">398324298</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
 <span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">"0x0"</span><span class="p">);</span>
 <span class="nx">addQuantity</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
 </code></pre>
-<p>Add a quantity of similar coupons to an existing SKU that has coupons in it.
+<p>Add a quantity of similar coupons to an existing SKU.
 Coupons will all be similar under the SKU, besides a new expiration for the given quantity created.
 Function caller must own the coupon SKU.
 Option: on creation, the coupon can be given ownership under a different address, essentially automatically transferred.</p>
@@ -1335,12 +1335,6 @@ Option: on creation, the coupon can be given ownership under a different address
 <td>number</td>
 <td>true</td>
 <td>The number of coupons to add to the SKU</td>
-</tr>
-<tr>
-<td>transferOnCreation</td>
-<td>boolean</td>
-<td>true</td>
-<td>Determine if coupon should be automatically transferred upon creation</td>
 </tr>
 <tr>
 <td>_transferTo</td>
