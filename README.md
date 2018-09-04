@@ -139,7 +139,7 @@ Surveys Contract
 _createAirdropSurvey(name, status, dataSupplier, couponSKU, couponCreator, couponDesc, couponImage, couponValue, RVC_tokens)
 
 Example calls:
-_createAirdropSurvey("My ICO Airdrop Survey", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", "SKU-For-Airdrop-Survey", "My Business", "Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund", "http://images.com/images/img12.jpg", 100, 100);
+_createAirdropSurvey("My ICO Airdrop Survey", SurveyStatus.Active, "0xa3ke89e...", "SKU-For-Airdrop-Survey", "My Business", "Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund", "http://images.com/images/img12.jpg", 100, 100);
 ```
 
 Create a new airdrop survey (SurveyType: AirdropSurvey) using the ReviewChain survey contract.
@@ -166,7 +166,7 @@ Surveys Contract
 _createCouponRewardSurvey(name, rewardCouponId, status, dataSupplier)
 
 Example calls:
-_createCouponRewardSurvey("My Coupon Reward Survey", 11, SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6");
+_createCouponRewardSurvey("My Coupon Reward Survey", 11, SurveyStatus.Active, "0xa3ke89e...");
 ```
 
 Create a new survey (SurveyType: CouponSurvey) using the ReviewChain survey contract.
@@ -189,9 +189,9 @@ Surveys Contract
 _createTokenRewardSurvey(name, rewardValue, reward, rewardToken, tokens, status, dataSupplier, maxParticipants)
 
 Example calls:
-_createTokenRewardSurvey("My Individual Payment Survey", 100, RewardType.IndividualPayment, SurveyRewardTokenType.RVC, "0x...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 100);
-_createTokenRewardSurvey("My Raffle Reward Survey", 0, RewardType.TokenRaffle, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-_createTokenRewardSurvey("My Bounty Payment Survey", 0, RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
+_createTokenRewardSurvey("My Individual Payment Survey", 100, RewardType.IndividualPayment, SurveyRewardTokenType.RVC, "0x...", SurveyStatus.Active, "0xa3ke89e...", 100);
+_createTokenRewardSurvey("My Raffle Reward Survey", 0, RewardType.TokenRaffle, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xa3ke89e...", 0);
+_createTokenRewardSurvey("My Bounty Payment Survey", 0, RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xa3ke89e...", 0);
 ```
 
 Create a new survey (any RewardType besides Coupon & CouponAirdrop) using the ReviewChain survey contract.
@@ -218,8 +218,8 @@ Surveys Contract
 _newSubmission(surveyId, address)
 
 Example calls:
-_newSubmission(0, "0xbb68109badc394848417cc487b8a6c737afe98c6");
-_newSubmission(1, "0x011a28420578a06728dd537754d0f3d9b73e5f57");
+_newSubmission(0, "0xa3ke89e...");
+_newSubmission(1, "0xa3ke89e...");
 ```
 
 Create a new submission for a survey with a specific id using the ReviewChain survey contract.
@@ -372,8 +372,8 @@ Surveys Contract
 balanceOf(address)
 
 Example calls:
-balanceOf("0xbb68109badc394848417cc487b8a6c737afe98c6");
-balanceOf("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+balanceOf("0xa3ke89e...");
+balanceOf("0xa3ke89e...");
 ```
 
 Get the balance (number) of surveys that an address owns.
@@ -413,8 +413,8 @@ Surveys Contract
 getOwnedSurveys(address)
 
 Example calls:
-getOwnedSurveys("0xbb68109badc394848417cc487b8a6c737afe98c6");
-getOwnedSurveys("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+getOwnedSurveys("0xa3ke89e...");
+getOwnedSurveys("0xa3ke89e...");
 ```
 
 Get all the surveys of an owner address, returns all IDs.
@@ -709,7 +709,7 @@ createCoupon(sku, expiration, quantity, _transferTo)
 
 Example calls:
 createCoupon("MY-COUPON-SKU", 0, 3, "0x000...");
-createCoupon("MY-COUPON-SKU", 293832984330, 3, "0xA3KE89E...");
+createCoupon("MY-COUPON-SKU", 293832984330, 3, "0xa3ke89e...");
 createCoupon("MY-TOKENCOUPON-SKU", 0, 2, "0x000...");
 createCoupon("MY-FUNDCOUPON-SKU", 0, 200, "0x000...");
 ```
@@ -800,8 +800,8 @@ Coupons Contract
 transfer(address, couponId)
 
 Example calls:
-transfer("0x011a28420578a06728dd537754d0f3d9b73e5f57", 1);
-transfer("0x011a28420578a06728dd537754d0f3d9b73e5f57", 2);
+transfer("0xa3ke89e...", 1);
+transfer("0xa3ke89e...", 2);
 ```
 
 Transfer a specific coupon to a new owner.
@@ -822,7 +822,7 @@ CouponSKUs Contract
 transfer(address, sku)
 
 Example calls:
-transfer("0x011a28420578a06728dd537754d0f3d9b73e5f57", "MY-TOKENCOUPON-SKU");
+transfer("0xa3ke89e...", "MY-TOKENCOUPON-SKU");
 ```
 
 Transfer a specific coupon SKU to a new owner.
@@ -985,8 +985,8 @@ Coupons Contract
 balanceOf(address)
 
 Example calls:
-balanceOf("0xbb68109badc394848417cc487b8a6c737afe98c6");
-balanceOf("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+balanceOf("0xa3ke89e...");
+balanceOf("0xa3ke89e...");
 ```
 
 Get the balance (number) of coupons that an address owns.
@@ -1005,8 +1005,8 @@ Coupons Contract
 getOwnedCoupons(address)
 
 Example calls:
-getOwnedCoupons("0xbb68109badc394848417cc487b8a6c737afe98c6");
-getOwnedCoupons("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+getOwnedCoupons("0xa3ke89e...");
+getOwnedCoupons("0xa3ke89e...");
 ```
 
 Get all the coupons of an owner address, returns all IDs.
@@ -1065,8 +1065,8 @@ CouponSKUs Contract
 balanceOf(address)
 
 Example calls:
-balanceOf("0xbb68109badc394848417cc487b8a6c737afe98c6");
-balanceOf("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+balanceOf("0xa3ke89e...");
+balanceOf("0xa3ke89e...");
 ```
 
 Get the balance (number) of SKUs that an address owns.
@@ -1085,8 +1085,8 @@ CouponSKUs Contract
 getOwnedSKUs(address)
 
 Example calls:
-getOwnedSKUs("0xbb68109badc394848417cc487b8a6c737afe98c6");
-getOwnedSKUs("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+getOwnedSKUs("0xa3ke89e...");
+getOwnedSKUs("0xa3ke89e...");
 ```
 
 Get all the Coupon SKUs of an owner address, returns all IDs.

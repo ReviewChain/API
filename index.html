@@ -517,7 +517,7 @@ Add these values for equivalent enum types.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">_createAirdropSurvey</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">couponSKU</span><span class="p">,</span> <span class="nx">couponCreator</span><span class="p">,</span> <span class="nx">couponDesc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">couponValue</span><span class="p">,</span> <span class="nx">RVC_tokens</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">_createAirdropSurvey</span><span class="p">(</span><span class="s2">"My ICO Airdrop Survey"</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="s2">"SKU-For-Airdrop-Survey"</span><span class="p">,</span> <span class="s2">"My Business"</span><span class="p">,</span> <span class="s2">"Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img12.jpg"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">_createAirdropSurvey</span><span class="p">(</span><span class="s2">"My ICO Airdrop Survey"</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="s2">"SKU-For-Airdrop-Survey"</span><span class="p">,</span> <span class="s2">"My Business"</span><span class="p">,</span> <span class="s2">"Voucher for 100 of my ICO tokens - WeeChain, Backup 200 RVC Fund"</span><span class="p">,</span> <span class="s2">"http://images.com/images/img12.jpg"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 </code></pre>
 <p>Create a new airdrop survey (SurveyType: AirdropSurvey) using the ReviewChain survey contract.</p>
 
@@ -589,7 +589,7 @@ Add these values for equivalent enum types.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">_createCouponRewardSurvey</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">_createCouponRewardSurvey</span><span class="p">(</span><span class="s2">"My Coupon Reward Survey"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
+<span class="nx">_createCouponRewardSurvey</span><span class="p">(</span><span class="s2">"My Coupon Reward Survey"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Create a new survey (SurveyType: CouponSurvey) using the ReviewChain survey contract.
 Creator must own the coupon being rewarded.</p>
@@ -632,9 +632,9 @@ Creator must own the coupon being rewarded.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">rewardValue</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">maxParticipants</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
 <p>Create a new survey (any RewardType besides Coupon &amp; CouponAirdrop) using the ReviewChain survey contract.</p>
 
@@ -706,8 +706,8 @@ Creator must own the coupon being rewarded.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">_newSubmission</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">,</span> <span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">_newSubmission</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">_newSubmission</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">_newSubmission</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">_newSubmission</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Create a new submission for a survey with a specific id using the ReviewChain survey contract.
 Function sender must be survey owner or data supplier for the survey.
@@ -916,8 +916,8 @@ This Function can only be called with surveys of RewardType AirdropCoupon.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Get the balance (number) of surveys that an address owns.</p>
 
@@ -967,8 +967,8 @@ This Function can only be called with surveys of RewardType AirdropCoupon.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">getOwnedSurveys</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getOwnedSurveys</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">getOwnedSurveys</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">getOwnedSurveys</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">getOwnedSurveys</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Get all the surveys of an owner address, returns all IDs.</p>
 
@@ -1413,7 +1413,7 @@ The SKU can later be populated with coupons of the specific SKU CouponType.</p>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">createCoupon</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">);</span>
-<span class="nx">createCoupon</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">293832984330</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"0xA3KE89E..."</span><span class="p">);</span>
+<span class="nx">createCoupon</span><span class="p">(</span><span class="s2">"MY-COUPON-SKU"</span><span class="p">,</span> <span class="mi">293832984330</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 <span class="nx">createCoupon</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">);</span>
 <span class="nx">createCoupon</span><span class="p">(</span><span class="s2">"MY-FUNDCOUPON-SKU"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">);</span>
 </code></pre>
@@ -1554,8 +1554,8 @@ CouponType cannot be type FundCoupon.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">transfer</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">couponId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </code></pre>
 <p>Transfer a specific coupon to a new owner.
 Function sender must own the coupon id to transfer it.</p>
@@ -1586,7 +1586,7 @@ Function sender must own the coupon id to transfer it.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">transfer</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">sku</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
+<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
 </code></pre>
 <p>Transfer a specific coupon SKU to a new owner.
 Function sender must own the coupon SKU.</p>
@@ -1784,8 +1784,8 @@ If the coupon is valid: &quot;valid&quot;</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Get the balance (number) of coupons that an address owns.</p>
 
@@ -1809,8 +1809,8 @@ If the coupon is valid: &quot;valid&quot;</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Get all the coupons of an owner address, returns all IDs.</p>
 
@@ -1884,8 +1884,8 @@ If the coupon is valid: &quot;valid&quot;</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Get the balance (number) of SKUs that an address owns.</p>
 
@@ -1909,8 +1909,8 @@ If the coupon is valid: &quot;valid&quot;</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">getOwnedSKUs</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getOwnedSKUs</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
-<span class="nx">getOwnedSKUs</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+<span class="nx">getOwnedSKUs</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
+<span class="nx">getOwnedSKUs</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">);</span>
 </code></pre>
 <p>Get all the Coupon SKUs of an owner address, returns all IDs.</p>
 
