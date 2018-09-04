@@ -185,7 +185,6 @@ dataSupplier| String      | true    	| Eth Address of a data supplier to adjust 
 ## Create Token Reward Survey
 Surveys Contract
 
-string name, uint rewardValue, RewardType reward, SurveyRewardTokenType rewardToken, ERC20 tokens, SurveyStatus status, address dataSupplier, uint maxParticipants
 ```javascript
 _createTokenRewardSurvey(name, rewardValue, reward, rewardToken, tokens, status, dataSupplier, maxParticipants)
 
