@@ -42,7 +42,7 @@ A simple interface to access the ReviewChain APIs.
 ```javascript
 CouponSKUs: 	0x9d4e542a69423de670eca4937330438ffb05a440
 —————————————————————————————————————————————————————————————————
-Coupons: 		0x93fd1711d0477d8c3d78a214411b995162caf213
+Coupons: 		0xa63f3dfee363bc1a2aa0f01fd4749d7bf0e7d265
 —————————————————————————————————————————————————————————————————
 FundCoupons: 	0x6798584631742cb2cf284cc10e58557ba38267ca
 —————————————————————————————————————————————————————————————————
