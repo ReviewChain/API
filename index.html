@@ -539,8 +539,8 @@ Add these values for equivalent enum types.</p>
 <tr>
 <td>RVC_tokens</td>
 <td>number</td>
-<td>true</td>
-<td>The value is the amount/number of RVC tokens that will be rewarded/sent to all (divided evenly) FundCoupon holders if the ICO airdrop fails, failsafe/backup payout. RVC tokens must be sent to the generated exscrow contract.</td>
+<td>false</td>
+<td>Optional failsafe. The value is the amount/number of RVC tokens that will be rewarded/sent to all (divided evenly) FundCoupon holders if the ICO airdrop fails, failsafe/backup payout. RVC tokens must be sent to the generated exscrow contract.</td>
 </tr>
 </tbody></table>
 <h2 id='create-coupon-reward-survey'>Create Coupon Reward Survey</h2>
@@ -570,7 +570,7 @@ Creator must own the coupon being rewarded.</p>
 <tr>
 <td>rewardCouponId</td>
 <td>number</td>
-<td>false</td>
+<td>true</td>
 <td>This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.</td>
 </tr>
 <tr>
@@ -613,7 +613,7 @@ _createTokenRewardSurvey(&quot;My Bounty Payment Survey&quot;, RewardType.Moneta
 <td>etherAmount</td>
 <td>number</td>
 <td>false</td>
-<td>Used as the rewardValue stored for the survey reward</td>
+<td>Only required for ETH SurveyRewardTokenType. Used as the rewardValue stored for the survey reward.</td>
 </tr>
 <tr>
 <td>name</td>
@@ -636,14 +636,14 @@ _createTokenRewardSurvey(&quot;My Bounty Payment Survey&quot;, RewardType.Moneta
 <tr>
 <td>rewardToken</td>
 <td>SurveyRewardTokenType</td>
-<td>false</td>
+<td>true</td>
 <td>This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]</td>
 </tr>
 <tr>
 <td>tokens</td>
 <td>string</td>
 <td>false</td>
-<td>Address of ERC20 type token. Only required if creator would like to implement custom ERC20 token.</td>
+<td>Only required for non-ETH SurveyRewardTokenType. Address of ERC20 type token. Only required if creator would like to implement custom ERC20 token.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -723,7 +723,7 @@ This Function cannot be called with surveys of RewardType IndividualPayment or A
 <td>etherAmount</td>
 <td>number</td>
 <td>false</td>
-<td>Amount of Ether to send to the functn call. Only required if the RewardType is a Coupon or TokenRaffle, because the amount will be used to cover oraclize callback costs.</td>
+<td>Only required for SurveyType CouponSurveyAmount or SurveyType TokenSurvey with RewardType TokenRaffle, because the amount will be used to cover oraclize callback costs. Amount of Ether to send to the functn call.</td>
 </tr>
 <tr>
 <td>surveyId</td>
@@ -1278,7 +1278,7 @@ The SKU can later be populated with coupons of the specific SKU CouponType.</p>
 <tr>
 <td>lockupRelease</td>
 <td>number</td>
-<td>true</td>
+<td>false</td>
 <td>Default 0, no lockup. The date when the coupon can be redeemed for its tokens, set in milliseconds since the Epoch in 1970.</td>
 </tr>
 <tr>
@@ -1373,8 +1373,8 @@ The SKU can later be populated with coupons of the specific SKU CouponType.</p>
 <tr>
 <td>expiration</td>
 <td>number</td>
-<td>true</td>
-<td>The expiration of the coupon, set in milliseconds since the Epoch in 1970. Use 0 for no expiration.</td>
+<td>false</td>
+<td>Default 0, no expiration. Not required for coupons that are not CouponType Coupon. The expiration of the coupon, set in milliseconds since the Epoch in 1970.</td>
 </tr>
 <tr>
 <td>quantity</td>

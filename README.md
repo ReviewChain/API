@@ -155,7 +155,7 @@ couponCreator | string    | true    	| The name of the creator, or business name
 couponDesc    | string    | true    	| The description for each coupon
 couponImage   | string    | true    	| The image representing each coupon
 couponValue   | number    | true    	| The value is the amount/number of tokens that will be rewarded/sent to the FundCoupon holder upon the airdrop
-RVC_tokens    | number    | true    	| The value is the amount/number of RVC tokens that will be rewarded/sent to all (divided evenly) FundCoupon holders if the ICO airdrop fails, failsafe/backup payout. RVC tokens must be sent to the generated exscrow contract.
+RVC_tokens    | number    | false    	| Optional failsafe. The value is the amount/number of RVC tokens that will be rewarded/sent to all (divided evenly) FundCoupon holders if the ICO airdrop fails, failsafe/backup payout. RVC tokens must be sent to the generated exscrow contract.
 
 
 
@@ -176,7 +176,7 @@ Creator must own the coupon being rewarded.
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
 name    	| string      | true    	| name of the survey
-rewardCouponId | number   | false     	| This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.
+rewardCouponId | number   | true     	| This is the id of the coupon that will be rewarded to participants. Must prove coupon ownership.
 status    	| SurveyStatus| true    	| Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.
 dataSupplier| String      | true    	| Eth Address of a data supplier to adjust survey besides the owner
 
@@ -200,12 +200,12 @@ Create a new survey (any RewardType besides Coupon & CouponAirdrop) using the Re
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-etherAmount | number      | false   	| Used as the rewardValue stored for the survey reward
+etherAmount | number      | false   	| Only required for ETH SurveyRewardTokenType. Used as the rewardValue stored for the survey reward.
 name    	| string      | true    	| name of the survey
 rewardValue | number      | false    	| Only required for non-ETH SurveyRewardTokenType, otherwise 0. This is the number of tokens that each be rewarded in the survey.
 reward    	| RewardType  | true    	| type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]
-rewardToken | SurveyRewardTokenType | false | This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]
-tokens    	| string      | false    	| Address of ERC20 type token. Only required if creator would like to implement custom ERC20 token.
+rewardToken | SurveyRewardTokenType | true | This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]
+tokens    	| string      | false    	| Only required for non-ETH SurveyRewardTokenType. Address of ERC20 type token. Only required if creator would like to implement custom ERC20 token.
 status    	| SurveyStatus| true    	| Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.
 dataSupplier| String      | true    	| Eth Address of a data supplier to adjust survey besides the owner
 maxParticipants| number   | false    	| Only required for IndividualPayment RewardType. This value is used to calculate how many participants to pay and how much to give to each.
@@ -253,7 +253,7 @@ This Function cannot be called with surveys of RewardType IndividualPayment or A
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-etherAmount | number    | false   | Amount of Ether to send to the functn call. Only required if the RewardType is a Coupon or TokenRaffle, because the amount will be used to cover oraclize callback costs.
+etherAmount | number    | false   | Only required for SurveyType CouponSurveyAmount or SurveyType TokenSurvey with RewardType TokenRaffle, because the amount will be used to cover oraclize callback costs. Amount of Ether to send to the functn call.
 surveyId  	| number    | true    | ID of survey to reward
 
 
@@ -652,7 +652,7 @@ creator   	| string      | true    | The name of the creator, or business name
 desc    	| string      | true    | The description of the coupon. This will be the core value for a coupon of type Coupon.
 couponImage | string      | true    | The image representing each coupon
 couponValue | number      | false   | Only required if CouponRewardTokenType is not ETH. This is the number of ERC20 tokens that each TokenCoupon will hold.
-lockupRelease | number    | true    | Default 0, no lockup. The date when the coupon can be redeemed for its tokens, set in milliseconds since the Epoch in 1970.
+lockupRelease | number    | false   | Default 0, no lockup. The date when the coupon can be redeemed for its tokens, set in milliseconds since the Epoch in 1970.
 tokens    	| string      | false   | Only required if CouponRewardTokenType is not ETH. Address of ERC20 type token.
 
 
@@ -701,7 +701,7 @@ Create a new Coupon using the ReviewChain coupon contract.
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
 sku     	| string      | true    | The unique SKU that will be set for all similar coupons created. All coupons can be referenced from the sku and more can be added to it.
-expiration  | number      | true    | The expiration of the coupon, set in milliseconds since the Epoch in 1970. Use 0 for no expiration.
+expiration  | number      | false   | Default 0, no expiration. Not required for coupons that are not CouponType Coupon. The expiration of the coupon, set in milliseconds since the Epoch in 1970.
 quantity    | number      | true    | The number of coupons to generate, under the given SKU. Each coupon is given its own unique ID.
 _transferTo | string      | false   | Send an address to automatically generate ownership of the created coupon under that address. Use "0x0000000..." for no address, leaving the ownership under the creator's address
 
