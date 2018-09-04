@@ -202,8 +202,8 @@ Param     | Datatype    | Required  | Description
 etherAmount | number      | false   	| Only required for ETH SurveyRewardTokenType. Used as the rewardValue stored for the survey reward.
 name    	| string      | true    	| name of the survey
 rewardValue | number      | false    	| Only required for non-ETH SurveyRewardTokenType, otherwise 0. This is the number of tokens that each be rewarded in the survey.
-reward    	| RewardType  | true    	| type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]
-rewardToken | SurveyRewardTokenType | true | This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]
+reward    	| RewardType  | true    	| type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty]
+rewardToken | SurveyRewardTokenType | true | This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [ETH, RVC, ERC20]
 tokens    	| string      | false    	| Only required for non-ETH SurveyRewardTokenType. Address of ERC20 type token. Only required if creator would like to implement custom ERC20 token.
 status    	| SurveyStatus| true    	| Active: survey can receive participants, Inactive: survey cannot receive participants, Rewarded: survey is over, participants are rewarded.
 dataSupplier| String      | true    	| Eth Address of a data supplier to adjust survey besides the owner
@@ -252,7 +252,7 @@ This Function cannot be called with surveys of RewardType IndividualPayment or A
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-etherAmount | number    | false   | Only required for SurveyType CouponSurveyAmount or SurveyType TokenSurvey with RewardType TokenRaffle, because the amount will be used to cover oraclize callback costs. Amount of Ether to send to the functn call.
+etherAmount | number    | false   | Only required for SurveyType CouponSurvey or SurveyType TokenSurvey with RewardType TokenRaffle, because the amount will be used to cover oraclize callback costs. Amount of Ether to send to the functn call.
 surveyId  	| number    | true    | ID of survey to reward
 
 
@@ -361,7 +361,7 @@ Returns bool. True if msg.sender address is in the participant list of the speci
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-surveyId  | number    | true    | ID of survey to reward
+surveyId  | number    | true    | ID of survey
 
 
 
@@ -402,7 +402,7 @@ Get the address of a survey owner, given the survey id (number).
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-surveyId  | number    | true    | Survey ID number
+surveyId  | number    | true    | ID of survey
 
 
 
@@ -447,6 +447,48 @@ surveyId  | number    | true    | Survey ID number
 
 
 
+## Get Survey Type
+Surveys Contract
+
+```javascript
+getSurveyType(surveyId)
+
+Example calls:
+getSurveyType(0);
+getSurveyType(1);
+getSurveyType(2);
+```
+
+Get the type of a survey (AirdropSurvey, TokenSurvey, CouponSurvey), given the survey id (number).
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+surveyId  | number    | true    | Survey ID number
+
+
+
+## Get Survey Data Supplier
+Surveys Contract
+
+```javascript
+getSurveyDataSupplier(surveyId)
+
+Example calls:
+getSurveyDataSupplier(0);
+getSurveyDataSupplier(1);
+getSurveyDataSupplier(2);
+```
+
+Get the data supplier of a survey (address), given the survey id (number).
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+surveyId  | number    | true    | Survey ID number
+
+
+
 ## Get Survey Data/Details for a Given Survey
 Surveys Contract
 
@@ -473,12 +515,12 @@ surveyId  | number    | true    | Survey ID number
 AirdropSurveys Contract
 
 ```javascript
-getAirdropSurveyDetails(surveyId)
+getAirdropSurvey(surveyId)
 
 Example calls:
-getAirdropSurveyDetails(0);
-getAirdropSurveyDetails(1);
-getAirdropSurveyDetails(2);
+getAirdropSurvey(0);
+getAirdropSurvey(1);
+getAirdropSurvey(2);
 ```
 
 Get the data for a AirdropSurvey, given the survey id (number).
@@ -517,12 +559,12 @@ surveyId  | number    | true    | Survey ID number
 CouponSurveys Contract
 
 ```javascript
-getCouponSurveyDetails(surveyId)
+getCouponSurvey(surveyId)
 
 Example calls:
-getCouponSurveyDetails(0);
-getCouponSurveyDetails(1);
-getCouponSurveyDetails(2);
+getCouponSurvey(0);
+getCouponSurvey(1);
+getCouponSurvey(2);
 ```
 
 Get the data for a CouponSurvey, given the survey id (number).
@@ -552,7 +594,7 @@ Function sender must be survey owner or data supplier for the survey.
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-surveyId  | number    | true    | ID of survey to update
+surveyId  | number    | true    | ID of survey
 newName   | string    | true    | New name to set for survey
 
 
@@ -575,30 +617,8 @@ Function sender must be survey owner or data supplier for the survey.
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-surveyId  | number    	| true    | ID of survey to update
+surveyId  | number    	| true    | ID of survey
 status    | SurveyStatus| true    | New status to set for the survey
-
-
-
-## Get the Survey Logs
-
-```javascript
-getSurveyLogs(logType)
-
-Example calls:
-getSurveyLogs("LogSurvey");
-getSurveyLogs("LogSubmission");
-getSurveyLogs("LogReward");
-getSurveyLogs("LogOraclizeRandomRaffle");
-getSurveyLogs("LogOraclizeQuery");
-```
-
-Get the logs of the ReviewChain Surveys contract.
-
-
-Param     | Datatype    | Required  | Description
------------ | ----------- | ----------- | -----------
-logType   | string    | true    | Options: LogSurvey, LogSubmission, LogReward, LogOraclizeRandomRaffle, LogOraclizeQuery
 
 
 
@@ -868,6 +888,7 @@ sku  		| string      | true    | SKU string
 
 
 ## Get Coupon Data for a Given Coupon
+Coupons Contract
 
 ```javascript
 getCouponDetails(couponId)
@@ -889,6 +910,7 @@ couponId  	| number    | true    | Coupon ID number
 
 
 ## Get Coupon State
+Coupons Contract
 
 ```javascript
 getCouponState(couponId)
@@ -915,6 +937,7 @@ couponId  	| number    | true    | Coupon ID number
 
 
 ## Get the Coupon Type
+Coupons Contract
 
 ```javascript
 getCouponType(couponId)
@@ -930,11 +953,12 @@ Returns the CouponType of the given coupon by id.
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-couponId  	| number    | true    | The ID of the coupon.
+couponId  	| number    | true    | Coupon ID number
 
 
 
 ## Get Coupon Owner
+Coupons Contract
 
 ```javascript
 ownerOf(couponId)
@@ -955,6 +979,7 @@ couponId  	| number    | true    | Coupon ID number
 
 
 ## Get Coupon Balance
+Coupons Contract
 
 ```javascript
 balanceOf(address)
@@ -974,6 +999,7 @@ address   	| string    | true    | Eth address of account
 
 
 ## Get Owned Coupons under an Address
+Coupons Contract
 
 ```javascript
 getOwnedCoupons(address)
@@ -989,6 +1015,66 @@ Get all the coupons of an owner address, returns all IDs.
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
 address   	| string    | true    | Address to retrieve owned coupons
+
+
+
+## Get SKU Owner, given ID
+CouponSKUs Contract
+
+```javascript
+ownerOf(skuId)
+
+Example calls:
+ownerOf(0);
+ownerOf(1);
+ownerOf(2);
+```
+
+Get the address of an SKU's owner, given the SKU id (number).
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+skuId  	| number    | true    | SKU ID number
+
+
+
+## Get SKU Owner, given String
+CouponSKUs Contract
+
+```javascript
+getSKUOwner(sku)
+
+Example calls:
+getSKUOwner("MY-TOKENCOUPON-SKU");
+```
+
+Get the address of an SKU's owner, given the SKU (string).
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+sku     	| string    | true    | SKU to retrieve
+
+
+
+## Get SKU Balance
+CouponSKUs Contract
+
+```javascript
+balanceOf(address)
+
+Example calls:
+balanceOf("0xbb68109badc394848417cc487b8a6c737afe98c6");
+balanceOf("0x011a28420578a06728dd537754d0f3d9b73e5f57");
+```
+
+Get the balance (number) of SKUs that an address owns.
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+address   	| string    | true    | Eth address of account
 
 
 
@@ -1008,38 +1094,138 @@ Get all the Coupon SKUs of an owner address, returns all IDs.
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-address   | string    | true    | Address to retrieve owned surveys
+address   | string    | true    | Address to retrieve owned SKUs
 
 
 
-## Get SKU Owner
+## Get SKU ID, given String
 CouponSKUs Contract
 
 ```javascript
-getSKUOwner(sku)
+getSKUId(sku)
 
 Example calls:
-getSKUOwner("MY-TOKENCOUPON-SKU");
+getSKUId("MY-TOKENCOUPON-SKU");
 ```
 
-Get the Eth address of the SKU owner.
+Get the ID (number) of an SKU, given the SKU (string).
 
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-sku     	| string    | true    | SKU to retrieve all coupons
+sku     	| string    | true    | SKU to retrieve
 
 
 
+## Get SKU, given ID
+CouponSKUs Contract
+
+```javascript
+getSKU(skuId)
+
+Example calls:
+getSKU(0);
+getSKU(1);
+getSKU(2);
+```
+
+Get the SKU (string), given the SKU id (number).
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+skuId  	| number    | true    | SKU ID number
 
 
 
+## Get SKU Status
+CouponSKUs Contract
+
+```javascript
+getSKUStatus(sku)
+
+Example calls:
+getSKUStatus("MY-TOKENCOUPON-SKU");
+```
+
+Get the SKU status (bool), given the SKU (string).
+Returns: true for valid SKU, false for invalid SKU.
+
+
+Param     | Datatype    | Required  | Description
+----------- | ----------- | ----------- | -----------
+sku     	| string    | true    | SKU to retrieve
 
 
 
+# ReviewChain Contract Logs
+Accessing Event Logs of the Survey and Coupon Contracts.
 
+## Get the Survey Logs
+Surveys Contracts
 
+```javascript
+LogAirdropSurvey: 		_surveyId, name, dataSupplier, couponSKU, creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogTokenSurvey: 		_surveyId, name, reward, rewardValue, rewardToken, tokens, dataSupplier, creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogCouponSurvey: 		_surveyId, name, rewardCouponId, dataSupplier, creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogSubmission: 			_surveyId, participant, submissionTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogUpdateSurvey: 		_surveyId, name, status, creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogSurveyStatus:		_surveyId, status, creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogReward:				_surveyId, surveyType, numParticipants, rewardTime
+```
 
+## Get the Airdrop Survey Logs
+AirdropSurveys Contracts
+
+```javascript
+LogAirdropSurveyEscrow:		_surveyId, escrowContractAddress, numTokens
+```
+
+## Get the Token Survey Logs
+TokenSurveys Contracts
+
+```javascript
+LogTokenSurveyEscrow: 		_surveyId, escrowContractAddress, numTokens
+—————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeRandomRaffle: 	_surveyId, queryId, ResultSerialNumber, randomNumber, winner, raffleTime
+—————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQuery: 			_surveyId, numParticipants, queryTime
+—————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQueryFail: 		_surveyId, requiredOraclizePrice, response
+```
+
+## Get the Coupon Survey Logs
+CouponSurveys Contracts
+
+```javascript
+LogOraclizeRandomRaffle: 	_surveyId, queryId, ResultSerialNumber, randomNumber, winner, raffleTime
+—————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQuery: 			_surveyId, numParticipants, queryTime
+—————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQueryFail: 		_surveyId, requiredOraclizePrice, response
+```
+
+## Get the Coupon SKU Logs
+CouponSKUs Contracts
+
+```javascript
+LogSKU: 				_skuId, sku, _owner, cType, rewardToken, creator, desc, couponImage, couponValue
+```
+
+## Get the Coupon Logs
+Coupons Contracts
+
+```javascript
+LogCreateCoupon: 		couponSKU, couponType, quantity, creationTime
+——————————————————————————————————————————————————————————————————————————
+LogRedeemCoupon: 		skuId, couponId, couponType, redeemTime
+```
 
 
 

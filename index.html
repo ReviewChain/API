@@ -309,6 +309,12 @@
                     <a href="#get-survey-state" class="toc-h2 toc-link" data-title="Get Survey State">Get Survey State</a>
                   </li>
                   <li>
+                    <a href="#get-survey-type" class="toc-h2 toc-link" data-title="Get Survey Type">Get Survey Type</a>
+                  </li>
+                  <li>
+                    <a href="#get-survey-data-supplier" class="toc-h2 toc-link" data-title="Get Survey Data Supplier">Get Survey Data Supplier</a>
+                  </li>
+                  <li>
                     <a href="#get-survey-data-details-for-a-given-survey" class="toc-h2 toc-link" data-title="Get Survey Data/Details for a Given Survey">Get Survey Data/Details for a Given Survey</a>
                   </li>
                   <li>
@@ -325,9 +331,6 @@
                   </li>
                   <li>
                     <a href="#set-a-survey-39-s-status" class="toc-h2 toc-link" data-title="Set a Survey's Status">Set a Survey's Status</a>
-                  </li>
-                  <li>
-                    <a href="#get-the-survey-logs" class="toc-h2 toc-link" data-title="Get the Survey Logs">Get the Survey Logs</a>
                   </li>
               </ul>
           </li>
@@ -389,10 +392,48 @@
                     <a href="#get-owned-coupons-under-an-address" class="toc-h2 toc-link" data-title="Get Owned Coupons under an Address">Get Owned Coupons under an Address</a>
                   </li>
                   <li>
+                    <a href="#get-sku-owner-given-id" class="toc-h2 toc-link" data-title="Get SKU Owner, given ID">Get SKU Owner, given ID</a>
+                  </li>
+                  <li>
+                    <a href="#get-sku-owner-given-string" class="toc-h2 toc-link" data-title="Get SKU Owner, given String">Get SKU Owner, given String</a>
+                  </li>
+                  <li>
+                    <a href="#get-sku-balance" class="toc-h2 toc-link" data-title="Get SKU Balance">Get SKU Balance</a>
+                  </li>
+                  <li>
                     <a href="#get-owned-skus-under-an-address" class="toc-h2 toc-link" data-title="Get Owned SKUs under an Address">Get Owned SKUs under an Address</a>
                   </li>
                   <li>
-                    <a href="#get-sku-owner" class="toc-h2 toc-link" data-title="Get SKU Owner">Get SKU Owner</a>
+                    <a href="#get-sku-id-given-string" class="toc-h2 toc-link" data-title="Get SKU ID, given String">Get SKU ID, given String</a>
+                  </li>
+                  <li>
+                    <a href="#get-sku-given-id" class="toc-h2 toc-link" data-title="Get SKU, given ID">Get SKU, given ID</a>
+                  </li>
+                  <li>
+                    <a href="#get-sku-status" class="toc-h2 toc-link" data-title="Get SKU Status">Get SKU Status</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#reviewchain-contract-logs" class="toc-h1 toc-link" data-title="ReviewChain Contract Logs">ReviewChain Contract Logs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-the-survey-logs" class="toc-h2 toc-link" data-title="Get the Survey Logs">Get the Survey Logs</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-airdrop-survey-logs" class="toc-h2 toc-link" data-title="Get the Airdrop Survey Logs">Get the Airdrop Survey Logs</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-token-survey-logs" class="toc-h2 toc-link" data-title="Get the Token Survey Logs">Get the Token Survey Logs</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-coupon-survey-logs" class="toc-h2 toc-link" data-title="Get the Coupon Survey Logs">Get the Coupon Survey Logs</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-coupon-sku-logs" class="toc-h2 toc-link" data-title="Get the Coupon SKU Logs">Get the Coupon SKU Logs</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-coupon-logs" class="toc-h2 toc-link" data-title="Get the Coupon Logs">Get the Coupon Logs</a>
                   </li>
               </ul>
           </li>
@@ -627,13 +668,13 @@ Creator must own the coupon being rewarded.</p>
 <td>reward</td>
 <td>RewardType</td>
 <td>true</td>
-<td>type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty, Coupon]</td>
+<td>type of reward that the surevey pays out to participants, options: [IndividualPayment, TokenRaffle, TokenBounty]</td>
 </tr>
 <tr>
 <td>rewardToken</td>
 <td>SurveyRewardTokenType</td>
 <td>true</td>
-<td>This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [NONE, ETH, RVC, ERC20]</td>
+<td>This is the type of token that will be stored and given to the winning participant(s) upon rewarding. options: [ETH, RVC, ERC20]</td>
 </tr>
 <tr>
 <td>tokens</td>
@@ -719,7 +760,7 @@ This Function cannot be called with surveys of RewardType IndividualPayment or A
 <td>etherAmount</td>
 <td>number</td>
 <td>false</td>
-<td>Only required for SurveyType CouponSurveyAmount or SurveyType TokenSurvey with RewardType TokenRaffle, because the amount will be used to cover oraclize callback costs. Amount of Ether to send to the functn call.</td>
+<td>Only required for SurveyType CouponSurvey or SurveyType TokenSurvey with RewardType TokenRaffle, because the amount will be used to cover oraclize callback costs. Amount of Ether to send to the functn call.</td>
 </tr>
 <tr>
 <td>surveyId</td>
@@ -867,7 +908,7 @@ This Function can only be called with surveys of RewardType AirdropCoupon.</p>
 <td>surveyId</td>
 <td>number</td>
 <td>true</td>
-<td>ID of survey to reward</td>
+<td>ID of survey</td>
 </tr>
 </tbody></table>
 <h2 id='get-survey-balance'>Get Survey Balance</h2>
@@ -918,7 +959,7 @@ This Function can only be called with surveys of RewardType AirdropCoupon.</p>
 <td>surveyId</td>
 <td>number</td>
 <td>true</td>
-<td>Survey ID number</td>
+<td>ID of survey</td>
 </tr>
 </tbody></table>
 <h2 id='get-owned-surveys-under-an-address'>Get Owned Surveys under an Address</h2>
@@ -972,6 +1013,58 @@ This Function can only be called with surveys of RewardType AirdropCoupon.</p>
 <td>Survey ID number</td>
 </tr>
 </tbody></table>
+<h2 id='get-survey-type'>Get Survey Type</h2>
+<p>Surveys Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getSurveyType</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">getSurveyType</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getSurveyType</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getSurveyType</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<p>Get the type of a survey (AirdropSurvey, TokenSurvey, CouponSurvey), given the survey id (number).</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>surveyId</td>
+<td>number</td>
+<td>true</td>
+<td>Survey ID number</td>
+</tr>
+</tbody></table>
+<h2 id='get-survey-data-supplier'>Get Survey Data Supplier</h2>
+<p>Surveys Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getSurveyDataSupplier</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">getSurveyDataSupplier</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getSurveyDataSupplier</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getSurveyDataSupplier</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<p>Get the data supplier of a survey (address), given the survey id (number).</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>surveyId</td>
+<td>number</td>
+<td>true</td>
+<td>Survey ID number</td>
+</tr>
+</tbody></table>
 <h2 id='get-survey-data-details-for-a-given-survey'>Get Survey Data/Details for a Given Survey</h2>
 <p>Surveys Contract</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">getSurveyDetails</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
@@ -1001,12 +1094,12 @@ This returns: the SurveyType, name, status, data supplier, timestamp of creation
 </tbody></table>
 <h2 id='get-airdropsurvey-data-details-for-a-given-airdropsurvey'>Get AirdropSurvey Data/Details for a Given AirdropSurvey</h2>
 <p>AirdropSurveys Contract</p>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">getAirdropSurveyDetails</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getAirdropSurvey</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getAirdropSurveyDetails</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="nx">getAirdropSurveyDetails</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="nx">getAirdropSurveyDetails</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">getAirdropSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getAirdropSurvey</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getAirdropSurvey</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
 <p>Get the data for a AirdropSurvey, given the survey id (number).
 This returns: the token escrow address, coupon sku for the respective FundCoupon</p>
@@ -1055,12 +1148,12 @@ This returns: the reward value, RewardType, SurveyRewardTokenType, token escrow 
 </tbody></table>
 <h2 id='get-couponsurvey-data-details-for-a-given-couponsurvey'>Get CouponSurvey Data/Details for a Given CouponSurvey</h2>
 <p>CouponSurveys Contract</p>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponSurveyDetails</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponSurvey</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getCouponSurveyDetails</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="nx">getCouponSurveyDetails</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="nx">getCouponSurveyDetails</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">getCouponSurvey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getCouponSurvey</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getCouponSurvey</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
 <p>Get the data for a CouponSurvey, given the survey id (number).
 This returns the reward coupon id for the survey</p>
@@ -1103,7 +1196,7 @@ Function sender must be survey owner or data supplier for the survey.</p>
 <td>surveyId</td>
 <td>number</td>
 <td>true</td>
-<td>ID of survey to update</td>
+<td>ID of survey</td>
 </tr>
 <tr>
 <td>newName</td>
@@ -1136,39 +1229,13 @@ Function sender must be survey owner or data supplier for the survey.</p>
 <td>surveyId</td>
 <td>number</td>
 <td>true</td>
-<td>ID of survey to update</td>
+<td>ID of survey</td>
 </tr>
 <tr>
 <td>status</td>
 <td>SurveyStatus</td>
 <td>true</td>
 <td>New status to set for the survey</td>
-</tr>
-</tbody></table>
-<h2 id='get-the-survey-logs'>Get the Survey Logs</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getSurveyLogs</span><span class="p">(</span><span class="nx">logType</span><span class="p">)</span>
-
-<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getSurveyLogs</span><span class="p">(</span><span class="s2">"LogSurvey"</span><span class="p">);</span>
-<span class="nx">getSurveyLogs</span><span class="p">(</span><span class="s2">"LogSubmission"</span><span class="p">);</span>
-<span class="nx">getSurveyLogs</span><span class="p">(</span><span class="s2">"LogReward"</span><span class="p">);</span>
-<span class="nx">getSurveyLogs</span><span class="p">(</span><span class="s2">"LogOraclizeRandomRaffle"</span><span class="p">);</span>
-<span class="nx">getSurveyLogs</span><span class="p">(</span><span class="s2">"LogOraclizeQuery"</span><span class="p">);</span>
-</code></pre>
-<p>Get the logs of the ReviewChain Surveys contract.</p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Datatype</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>logType</td>
-<td>string</td>
-<td>true</td>
-<td>Options: LogSurvey, LogSubmission, LogReward, LogOraclizeRandomRaffle, LogOraclizeQuery</td>
 </tr>
 </tbody></table>
 <h1 id='reviewchain-coupon-api'>ReviewChain Coupon API</h1>
@@ -1601,7 +1668,9 @@ This returns: the sku, the CouponType, the creator, the description, the coupon 
 <td>SKU string</td>
 </tr>
 </tbody></table>
-<h2 id='get-coupon-data-for-a-given-coupon'>Get Coupon Data for a Given Coupon</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponDetails</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+<h2 id='get-coupon-data-for-a-given-coupon'>Get Coupon Data for a Given Coupon</h2>
+<p>Coupons Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponDetails</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">getCouponDetails</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -1626,7 +1695,9 @@ This returns: the sku id, the expiration, the status, the coupon owner.</p>
 <td>Coupon ID number</td>
 </tr>
 </tbody></table>
-<h2 id='get-coupon-state'>Get Coupon State</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponState</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+<h2 id='get-coupon-state'>Get Coupon State</h2>
+<p>Coupons Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponState</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">getCouponState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -1656,7 +1727,9 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>Coupon ID number</td>
 </tr>
 </tbody></table>
-<h2 id='get-the-coupon-type'>Get the Coupon Type</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponType</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+<h2 id='get-the-coupon-type'>Get the Coupon Type</h2>
+<p>Coupons Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponType</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">getCouponType</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -1677,10 +1750,12 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>couponId</td>
 <td>number</td>
 <td>true</td>
-<td>The ID of the coupon.</td>
+<td>Coupon ID number</td>
 </tr>
 </tbody></table>
-<h2 id='get-coupon-owner'>Get Coupon Owner</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">ownerOf</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
+<h2 id='get-coupon-owner'>Get Coupon Owner</h2>
+<p>Coupons Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">ownerOf</span><span class="p">(</span><span class="nx">couponId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">ownerOf</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -1704,7 +1779,9 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>Coupon ID number</td>
 </tr>
 </tbody></table>
-<h2 id='get-coupon-balance'>Get Coupon Balance</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
+<h2 id='get-coupon-balance'>Get Coupon Balance</h2>
+<p>Coupons Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
@@ -1727,7 +1804,9 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>Eth address of account</td>
 </tr>
 </tbody></table>
-<h2 id='get-owned-coupons-under-an-address'>Get Owned Coupons under an Address</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
+<h2 id='get-owned-coupons-under-an-address'>Get Owned Coupons under an Address</h2>
+<p>Coupons Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
 <span class="nx">getOwnedCoupons</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
@@ -1748,6 +1827,81 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>string</td>
 <td>true</td>
 <td>Address to retrieve owned coupons</td>
+</tr>
+</tbody></table>
+<h2 id='get-sku-owner-given-id'>Get SKU Owner, given ID</h2>
+<p>CouponSKUs Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">ownerOf</span><span class="p">(</span><span class="nx">skuId</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">ownerOf</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">ownerOf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">ownerOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<p>Get the address of an SKU&#39;s owner, given the SKU id (number).</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>skuId</td>
+<td>number</td>
+<td>true</td>
+<td>SKU ID number</td>
+</tr>
+</tbody></table>
+<h2 id='get-sku-owner-given-string'>Get SKU Owner, given String</h2>
+<p>CouponSKUs Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getSKUOwner</span><span class="p">(</span><span class="nx">sku</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">getSKUOwner</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
+</code></pre>
+<p>Get the address of an SKU&#39;s owner, given the SKU (string).</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>SKU to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-sku-balance'>Get SKU Balance</h2>
+<p>CouponSKUs Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">);</span>
+<span class="nx">balanceOf</span><span class="p">(</span><span class="s2">"0x011a28420578a06728dd537754d0f3d9b73e5f57"</span><span class="p">);</span>
+</code></pre>
+<p>Get the balance (number) of SKUs that an address owns.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>Eth address of account</td>
 </tr>
 </tbody></table>
 <h2 id='get-owned-skus-under-an-address'>Get Owned SKUs under an Address</h2>
@@ -1772,17 +1926,17 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>address</td>
 <td>string</td>
 <td>true</td>
-<td>Address to retrieve owned surveys</td>
+<td>Address to retrieve owned SKUs</td>
 </tr>
 </tbody></table>
-<h2 id='get-sku-owner'>Get SKU Owner</h2>
+<h2 id='get-sku-id-given-string'>Get SKU ID, given String</h2>
 <p>CouponSKUs Contract</p>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">getSKUOwner</span><span class="p">(</span><span class="nx">sku</span><span class="p">)</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getSKUId</span><span class="p">(</span><span class="nx">sku</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">getSKUOwner</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
+<span class="nx">getSKUId</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
 </code></pre>
-<p>Get the Eth address of the SKU owner.</p>
+<p>Get the ID (number) of an SKU, given the SKU (string).</p>
 
 <table><thead>
 <tr>
@@ -1796,10 +1950,105 @@ If the coupon is valid: &quot;valid&quot;</p>
 <td>sku</td>
 <td>string</td>
 <td>true</td>
-<td>SKU to retrieve all coupons</td>
+<td>SKU to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-sku-given-id'>Get SKU, given ID</h2>
+<p>CouponSKUs Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getSKU</span><span class="p">(</span><span class="nx">skuId</span><span class="p">)</span>
 
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">getSKU</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nx">getSKU</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">getSKU</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<p>Get the SKU (string), given the SKU id (number).</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>skuId</td>
+<td>number</td>
+<td>true</td>
+<td>SKU ID number</td>
+</tr>
+</tbody></table>
+<h2 id='get-sku-status'>Get SKU Status</h2>
+<p>CouponSKUs Contract</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getSKUStatus</span><span class="p">(</span><span class="nx">sku</span><span class="p">)</span>
+
+<span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
+<span class="nx">getSKUStatus</span><span class="p">(</span><span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
+</code></pre>
+<p>Get the SKU status (bool), given the SKU (string).
+Returns: true for valid SKU, false for invalid SKU.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Datatype</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string</td>
+<td>true</td>
+<td>SKU to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='reviewchain-contract-logs'>ReviewChain Contract Logs</h1>
+<p>Accessing Event Logs of the Survey and Coupon Contracts.</p>
+<h2 id='get-the-survey-logs'>Get the Survey Logs</h2>
+<p>Surveys Contracts</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">LogAirdropSurvey</span><span class="p">:</span>       <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">couponSKU</span><span class="p">,</span> <span class="nx">creationTime</span>
+<span class="err">———————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogTokenSurvey</span><span class="p">:</span>         <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardValue</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">creationTime</span>
+<span class="err">———————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogCouponSurvey</span><span class="p">:</span>        <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">rewardCouponId</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">creationTime</span>
+<span class="err">———————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogSubmission</span><span class="p">:</span>          <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">participant</span><span class="p">,</span> <span class="nx">submissionTime</span>
+<span class="err">———————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogUpdateSurvey</span><span class="p">:</span>        <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">creationTime</span>
+<span class="err">———————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogSurveyStatus</span><span class="p">:</span>        <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">creationTime</span>
+<span class="err">———————————————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogReward</span><span class="p">:</span>              <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">surveyType</span><span class="p">,</span> <span class="nx">numParticipants</span><span class="p">,</span> <span class="nx">rewardTime</span>
+</code></pre><h2 id='get-the-airdrop-survey-logs'>Get the Airdrop Survey Logs</h2>
+<p>AirdropSurveys Contracts</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">LogAirdropSurveyEscrow</span><span class="p">:</span>     <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">escrowContractAddress</span><span class="p">,</span> <span class="nx">numTokens</span>
+</code></pre><h2 id='get-the-token-survey-logs'>Get the Token Survey Logs</h2>
+<p>TokenSurveys Contracts</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">LogTokenSurveyEscrow</span><span class="p">:</span>       <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">escrowContractAddress</span><span class="p">,</span> <span class="nx">numTokens</span>
+<span class="err">—————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogOraclizeRandomRaffle</span><span class="p">:</span>    <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">queryId</span><span class="p">,</span> <span class="nx">ResultSerialNumber</span><span class="p">,</span> <span class="nx">randomNumber</span><span class="p">,</span> <span class="nx">winner</span><span class="p">,</span> <span class="nx">raffleTime</span>
+<span class="err">—————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogOraclizeQuery</span><span class="p">:</span>           <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">numParticipants</span><span class="p">,</span> <span class="nx">queryTime</span>
+<span class="err">—————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogOraclizeQueryFail</span><span class="p">:</span>       <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">requiredOraclizePrice</span><span class="p">,</span> <span class="nx">response</span>
+</code></pre><h2 id='get-the-coupon-survey-logs'>Get the Coupon Survey Logs</h2>
+<p>CouponSurveys Contracts</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">LogOraclizeRandomRaffle</span><span class="p">:</span>    <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">queryId</span><span class="p">,</span> <span class="nx">ResultSerialNumber</span><span class="p">,</span> <span class="nx">randomNumber</span><span class="p">,</span> <span class="nx">winner</span><span class="p">,</span> <span class="nx">raffleTime</span>
+<span class="err">—————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogOraclizeQuery</span><span class="p">:</span>           <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">numParticipants</span><span class="p">,</span> <span class="nx">queryTime</span>
+<span class="err">—————————————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogOraclizeQueryFail</span><span class="p">:</span>       <span class="nx">_surveyId</span><span class="p">,</span> <span class="nx">requiredOraclizePrice</span><span class="p">,</span> <span class="nx">response</span>
+</code></pre><h2 id='get-the-coupon-sku-logs'>Get the Coupon SKU Logs</h2>
+<p>CouponSKUs Contracts</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">LogSKU</span><span class="p">:</span>                 <span class="nx">_skuId</span><span class="p">,</span> <span class="nx">sku</span><span class="p">,</span> <span class="nx">_owner</span><span class="p">,</span> <span class="nx">cType</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">creator</span><span class="p">,</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">couponImage</span><span class="p">,</span> <span class="nx">couponValue</span>
+</code></pre><h2 id='get-the-coupon-logs'>Get the Coupon Logs</h2>
+<p>Coupons Contracts</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">LogCreateCoupon</span><span class="p">:</span>        <span class="nx">couponSKU</span><span class="p">,</span> <span class="nx">couponType</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">,</span> <span class="nx">creationTime</span>
+<span class="err">——————————————————————————————————————————————————————————————————————————</span>
+<span class="nl">LogRedeemCoupon</span><span class="p">:</span>        <span class="nx">skuId</span><span class="p">,</span> <span class="nx">couponId</span><span class="p">,</span> <span class="nx">couponType</span><span class="p">,</span> <span class="nx">redeemTime</span>
+</code></pre>
       </div>
       <div class="dark-box">
       </div>
