@@ -591,9 +591,9 @@ Creator must own the coupon being rewarded.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">rewardValue</span><span class="p">,</span> <span class="nx">reward</span><span class="p">,</span> <span class="nx">rewardToken</span><span class="p">,</span> <span class="nx">tokens</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">dataSupplier</span><span class="p">,</span> <span class="nx">maxParticipants</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Individual Payment Survey"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">IndividualPayment</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">RVC</span><span class="p">,</span> <span class="s2">"0x..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Raffle Reward Survey"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">TokenRaffle</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">_createTokenRewardSurvey</span><span class="p">(</span><span class="s2">"My Bounty Payment Survey"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">RewardType</span><span class="p">.</span><span class="nx">MonetaryBounty</span><span class="p">,</span> <span class="nx">SurveyRewardTokenType</span><span class="p">.</span><span class="nx">ETH</span><span class="p">,</span> <span class="s2">"0x000..."</span><span class="p">,</span> <span class="nx">SurveyStatus</span><span class="p">.</span><span class="nx">Active</span><span class="p">,</span> <span class="s2">"0xbb68109badc394848417cc487b8a6c737afe98c6"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
 <p>Create a new survey (any RewardType besides Coupon &amp; CouponAirdrop) using the ReviewChain survey contract.</p>
 
@@ -696,11 +696,11 @@ If the survey RewardType is AirdropCoupon, a Coupon of type FundCoupon is automa
 </tbody></table>
 <h2 id='reward-survey-participants'>Reward Survey Participants</h2>
 <p>Surveys Contract</p>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">rewardParticipants</span><span class="p">(</span><span class="nx">etherAmount</span><span class="p">,</span> <span class="nx">surveyId</span><span class="p">)</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">rewardParticipants</span><span class="p">(</span><span class="nx">surveyId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mf">0.004</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c1">// Ex. FOR RAFFLE or COUPON, raffle required</span>
-<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>       <span class="c1">// Ex. FOR BOUNTY, no raffle required</span>
+<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">// Ex. FOR RAFFLE or COUPON, raffle required</span>
+<span class="nx">rewardParticipants</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>      <span class="c1">// Ex. FOR BOUNTY, no raffle required</span>
 </code></pre>
 <p>Using the set RewardType for the survey and the given payout amount, reward either a participant, some participants, or all participants.
 Function sender must be survey owner or data supplier for the survey.
@@ -1360,6 +1360,12 @@ The SKU can later be populated with coupons of the specific SKU CouponType.</p>
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>etherAmount</td>
+<td>number</td>
+<td>false</td>
+<td>Only required for CouponType TokenCoupon with CouponRewardTokenType ETH, because the amount will be the ETH per TokenCoupon. Amount of Ether to send to the Function call.</td>
+</tr>
 <tr>
 <td>sku</td>
 <td>string</td>

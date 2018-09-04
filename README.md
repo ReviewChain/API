@@ -189,9 +189,9 @@ Surveys Contract
 _createTokenRewardSurvey(name, rewardValue, reward, rewardToken, tokens, status, dataSupplier, maxParticipants)
 
 Example calls:
-_createTokenRewardSurvey("My Individual Payment Survey", RewardType.IndividualPayment, SurveyRewardTokenType.RVC, "0x...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 100);
-_createTokenRewardSurvey("My Raffle Reward Survey", RewardType.TokenRaffle, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
-_createTokenRewardSurvey("My Bounty Payment Survey", RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
+_createTokenRewardSurvey("My Individual Payment Survey", 100, RewardType.IndividualPayment, SurveyRewardTokenType.RVC, "0x...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 100);
+_createTokenRewardSurvey("My Raffle Reward Survey", 0, RewardType.TokenRaffle, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
+_createTokenRewardSurvey("My Bounty Payment Survey", 0, RewardType.MonetaryBounty, SurveyRewardTokenType.ETH, "0x000...", SurveyStatus.Active, "0xbb68109badc394848417cc487b8a6c737afe98c6", 0);
 ```
 
 Create a new survey (any RewardType besides Coupon & CouponAirdrop) using the ReviewChain survey contract.
@@ -238,11 +238,11 @@ address   | string    | true    | Eth Address of the participant to add to the p
 Surveys Contract
 
 ```javascript
-rewardParticipants(etherAmount, surveyId)
+rewardParticipants(surveyId)
 
 Example calls:
-rewardParticipants(0.004, 1);    // Ex. FOR RAFFLE or COUPON, raffle required
-rewardParticipants(0, 1);     	// Ex. FOR BOUNTY, no raffle required
+rewardParticipants(1);    // Ex. FOR RAFFLE or COUPON, raffle required
+rewardParticipants(1);     	// Ex. FOR BOUNTY, no raffle required
 ```
 
 Using the set RewardType for the survey and the given payout amount, reward either a participant, some participants, or all participants.
@@ -699,6 +699,7 @@ Create a new Coupon using the ReviewChain coupon contract.
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
+etherAmount | number      | false   | Only required for CouponType TokenCoupon with CouponRewardTokenType ETH, because the amount will be the ETH per TokenCoupon. Amount of Ether to send to the Function call.
 sku     	| string      | true    | The unique SKU that will be set for all similar coupons created. All coupons can be referenced from the sku and more can be added to it.
 expiration  | number      | false   | Default 0, no expiration. Not required for coupons that are not CouponType Coupon. The expiration of the coupon, set in milliseconds since the Epoch in 1970.
 quantity    | number      | true    | The number of coupons to generate, under the given SKU. Each coupon is given its own unique ID.
