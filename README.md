@@ -373,7 +373,6 @@ balanceOf(address)
 
 Example calls:
 balanceOf("0xa3ke89e...");
-balanceOf("0xa3ke89e...");
 ```
 
 Get the balance (number) of surveys that an address owns.
@@ -413,7 +412,6 @@ Surveys Contract
 getOwnedSurveys(address)
 
 Example calls:
-getOwnedSurveys("0xa3ke89e...");
 getOwnedSurveys("0xa3ke89e...");
 ```
 
@@ -986,7 +984,6 @@ balanceOf(address)
 
 Example calls:
 balanceOf("0xa3ke89e...");
-balanceOf("0xa3ke89e...");
 ```
 
 Get the balance (number) of coupons that an address owns.
@@ -1005,7 +1002,6 @@ Coupons Contract
 getOwnedCoupons(address)
 
 Example calls:
-getOwnedCoupons("0xa3ke89e...");
 getOwnedCoupons("0xa3ke89e...");
 ```
 
@@ -1066,7 +1062,6 @@ balanceOf(address)
 
 Example calls:
 balanceOf("0xa3ke89e...");
-balanceOf("0xa3ke89e...");
 ```
 
 Get the balance (number) of SKUs that an address owns.
@@ -1085,7 +1080,6 @@ CouponSKUs Contract
 getOwnedSKUs(address)
 
 Example calls:
-getOwnedSKUs("0xa3ke89e...");
 getOwnedSKUs("0xa3ke89e...");
 ```
 
