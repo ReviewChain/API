@@ -1581,10 +1581,10 @@ Function sender must own the coupon id to transfer it.</p>
 </tbody></table>
 <h2 id='transfer-a-coupon-sku'>Transfer a Coupon SKU</h2>
 <p>CouponSKUs Contract</p>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">transfer</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">sku</span><span class="p">)</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">transfer</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">skuId</span><span class="p">)</span>
 
 <span class="nx">Example</span> <span class="nx">calls</span><span class="p">:</span>
-<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="s2">"MY-TOKENCOUPON-SKU"</span><span class="p">);</span>
+<span class="nx">transfer</span><span class="p">(</span><span class="s2">"0xa3ke89e..."</span><span class="p">,</span> <span class="mi">52</span><span class="p">);</span>
 </code></pre>
 <p>Transfer a specific coupon SKU to a new owner.
 Function sender must own the coupon SKU.</p>
@@ -1604,10 +1604,10 @@ Function sender must own the coupon SKU.</p>
 <td>Eth address to send coupon ownership to</td>
 </tr>
 <tr>
-<td>sku</td>
-<td>string</td>
+<td>skuId</td>
+<td>number</td>
 <td>true</td>
-<td>SKU to transfer</td>
+<td>SKU ID number</td>
 </tr>
 </tbody></table>
 <h2 id='get-the-number-of-total-coupons-in-circulation'>Get the Number of Total Coupons in Circulation</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">getCouponsLength</span><span class="p">()</span>
@@ -1660,10 +1660,10 @@ This returns: the sku, the CouponType, the creator, the description, the coupon 
 </tr>
 </thead><tbody>
 <tr>
-<td>sku</td>
-<td>string</td>
+<td>skuId</td>
+<td>number</td>
 <td>true</td>
-<td>SKU string</td>
+<td>SKU ID number</td>
 </tr>
 </tbody></table>
 <h2 id='get-coupon-data-for-a-given-coupon'>Get Coupon Data for a Given Coupon</h2>

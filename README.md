@@ -817,10 +817,10 @@ couponId  | number    | true    | Coupon ID to transfer to new owner
 CouponSKUs Contract
 
 ```javascript
-transfer(address, sku)
+transfer(address, skuId)
 
 Example calls:
-transfer("0xa3ke89e...", "MY-TOKENCOUPON-SKU");
+transfer("0xa3ke89e...", 52);
 ```
 
 Transfer a specific coupon SKU to a new owner.
@@ -830,7 +830,7 @@ Function sender must own the coupon SKU.
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
 address   	| string    | true    | Eth address to send coupon ownership to
-sku     	| string    | true    | SKU to transfer
+skuId  		| number    | true    | SKU ID number
 
 
 
@@ -881,7 +881,7 @@ This returns: the sku, the CouponType, the creator, the description, the coupon 
 
 Param     | Datatype    | Required  | Description
 ----------- | ----------- | ----------- | -----------
-sku  		| string      | true    | SKU string
+skuId  	| number    | true    | SKU ID number
 
 
 
