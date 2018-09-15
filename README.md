@@ -1159,66 +1159,66 @@ Accessing Event Logs of the Survey and Coupon Contracts.
 Surveys Contracts
 
 ```javascript
-LogAirdropSurvey: 		_surveyId, name, dataSupplier, couponSKU, creationTime
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogTokenSurvey: 		_surveyId, name, reward, rewardValue, rewardToken, tokens, dataSupplier, creationTime
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogCouponSurvey: 		_surveyId, name, rewardCouponId, dataSupplier, creationTime
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogSubmission: 			_surveyId, participant, submissionTime
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogUpdateSurvey: 		_surveyId, name, status, creationTime
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogSurveyStatus:		_surveyId, status, creationTime
-———————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogReward:				_surveyId, surveyType, numParticipants, rewardTime
+LogAirdropSurvey: 		uint indexed _surveyId, address indexed creator, string name, address dataSupplier, string indexed couponSKU, uint creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogTokenSurvey: 		uint indexed _surveyId, address indexed creator, string name, RewardType reward, uint rewardValue, SurveyRewardTokenType rewardToken, ERC20 tokens, address dataSupplier, uint creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogCouponSurvey: 		uint indexed _surveyId, address indexed creator, string name, uint rewardCouponId, address dataSupplier, uint creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogSubmission: 			uint indexed _surveyId, address participant, uint submissionTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogUpdateSurvey: 		uint indexed _surveyId, address indexed creator, string name, SurveyStatus status, uint creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogSurveyStatus:		uint indexed _surveyId, address indexed creator, SurveyStatus status, uint creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogReward:				uint indexed _surveyId, address indexed creator, SurveyType surveyType, uint numParticipants, uint rewardTime
 ```
 
 ## Get the Airdrop Survey Logs
 AirdropSurveys Contracts
 
 ```javascript
-LogAirdropSurveyEscrow:		_surveyId, escrowContractAddress, numTokens
+LogAirdropSurveyEscrow:		uint indexed _surveyId, address escrowContractAddress, uint numTokens
 ```
 
 ## Get the Token Survey Logs
 TokenSurveys Contracts
 
 ```javascript
-LogTokenSurveyEscrow: 		_surveyId, escrowContractAddress, numTokens
-—————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogOraclizeRandomRaffle: 	_surveyId, queryId, ResultSerialNumber, randomNumber, winner, raffleTime
-—————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogOraclizeQuery: 			_surveyId, numParticipants, queryTime
-—————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogOraclizeQueryFail: 		_surveyId, requiredOraclizePrice, response
+LogTokenSurveyEscrow: 		uint indexed _surveyId, address escrowContractAddress, uint numTokens
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeRandomRaffle: 	uint indexed _surveyId, bytes32 indexed queryId, uint indexed ResultSerialNumber, uint randomNumber, address winner, uint raffleTime
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQuery: 			uint indexed _surveyId, uint numParticipants, uint queryTime
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQueryFail: 		uint indexed _surveyId, uint requiredOraclizePrice, string response
 ```
 
 ## Get the Coupon Survey Logs
 CouponSurveys Contracts
 
 ```javascript
-LogOraclizeRandomRaffle: 	_surveyId, queryId, ResultSerialNumber, randomNumber, winner, raffleTime
-—————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogOraclizeQuery: 			_surveyId, numParticipants, queryTime
-—————————————————————————————————————————————————————————————————————————————————————————————————————————
-LogOraclizeQueryFail: 		_surveyId, requiredOraclizePrice, response
+LogOraclizeRandomRaffle: 	uint indexed _surveyId, bytes32 indexed queryId, uint indexed ResultSerialNumber, uint randomNumber, address winner, uint raffleTime
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQuery: 			uint indexed _surveyId, uint numParticipants, uint queryTime
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogOraclizeQueryFail: 		uint indexed _surveyId, uint requiredOraclizePrice, string response
 ```
 
 ## Get the Coupon SKU Logs
 CouponSKUs Contracts
 
 ```javascript
-LogSKU: 				_skuId, sku, _owner, cType, rewardToken, creator, desc, couponImage, couponValue
+LogSKU: 				uint indexed _skuId, address indexed creator, string indexed sku, CouponType cType, CouponRewardTokenType rewardToken, string creatorName, string desc, string couponImage, uint couponValue
 ```
 
 ## Get the Coupon Logs
 Coupons Contracts
 
 ```javascript
-LogCreateCoupon: 		couponSKU, couponType, quantity, creationTime
-——————————————————————————————————————————————————————————————————————————
-LogRedeemCoupon: 		skuId, couponId, couponType, redeemTime
+LogCreateCoupon: 		string indexed couponSKU, address indexed creator, uint couponType, uint quantity, uint creationTime
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+LogRedeemCoupon: 		uint indexed skuId, address indexed owner, uint couponId, uint couponType, uint redeemTime
 ```
 
 
